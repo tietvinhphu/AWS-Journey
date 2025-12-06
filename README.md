@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/AWS_Cover.png"/>
+  <img src="images/AWS_Cover.png" style="border-radius: 15px;"/>
   <h1>☁️ AWS Learning Journey</h1>
   <p>
     <b>Người thực hiện:</b> Tiết Vinh Phú<br>
