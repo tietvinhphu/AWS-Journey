@@ -24,8 +24,9 @@
 ### 📈 Thống kê
 ![Commits](https://img.shields.io/github/last-commit/tietvinhphu/AWS-Journey?style=for-the-badge&color=blue)
 
-#1. Đổi trạng thái sang "Completed" (Xanh lá): Thay badge màu vàng cũ bằng đoạn này:
+"""
+1. Đổi trạng thái sang "Completed" (Xanh lá): Thay badge màu vàng cũ bằng đoạn này:
 ![Done](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
 
-#2. Thêm link video:
-![Youtube](https://img.shields.io/badge/View-Video-red?style=flat-square&logo=youtube)
+2.Thêm link video:
+![Youtube](https://img.shields.io/badge/View-Video-red?style=flat-square&logo=youtube)"""
