@@ -9,6 +9,9 @@ on:
       - 'Session-*/**' # Chỉ chạy khi có thay đổi trong các folder bài học
       - 'update_readme.py'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
