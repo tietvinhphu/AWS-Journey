@@ -1,0 +1,32 @@
+name: Auto Close Pull Requests
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  auto-close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close Pull Request
+        uses: actions/github-script@v6
+        with:
+          script: |
+            // Add a comment explaining why
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: "🚫 **Xin chào!** Cảm ơn bạn đã quan tâm.\n\nĐây là repository cá nhân lưu trữ hành trình học tập, vì vậy mình **không nhận Pull Request** đóng góp vào code lõi.\n\nNếu bạn có thắc mắc hoặc góp ý, vui lòng tạo **Issue** nhé! PR này sẽ được đóng tự động. Chúc một ngày tốt lành! 👋"
+            });
+
+            // Close the PR
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              state: 'closed'
+            });
