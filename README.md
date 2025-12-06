@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-  ![AWS Journey](./Images/AWS_Cover.png)
+  ![AWS Journey](https://raw.githubusercontent.com/tietvinhphu/AWS-Journey/main/Images/AWS_Cover.png)
   <br />
   <h1>☁️ AWS Learning Journey</h1>
   <p>
