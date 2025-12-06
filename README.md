@@ -1,7 +1,5 @@
 <div align="center">
-  <br />
-  ![Avatar](https://github.com/user-attachments/assets/2189c828-2027-4c61-96a1-3a2f357cff29)
-  <br />
+  <img src="https://github.com/user-attachments/assets/2189c828-2027-4c61-96a1-3a2f357cff29" width="1280" height="640" style="border-radius: 50%;" alt="Avatar"/>
   <h1>☁️ AWS Learning Journey</h1>
   <p>
     <b>Người thực hiện:</b> Tiết Vinh Phú<br>
