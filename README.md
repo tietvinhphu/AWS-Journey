@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-  ![AWS Journey](https://raw.githubusercontent.com/tietvinhphu/AWS-Journey/main/Images/AWS_Cover.png)
+  ![Avatar](https://github.com/user-attachments/assets/2189c828-2027-4c61-96a1-3a2f357cff29)
   <br />
   <h1>☁️ AWS Learning Journey</h1>
   <p>
