@@ -19,4 +19,4 @@
 
 ---
 ### 📈 Thống kê
-![Commits](https://img.shields.io/github/last-commit/tietvinhphu/AWS_Journey?style=for-the-badge&color=blue)
+![Commits](https://img.shields.io/github/last-commit/tietvinhphu/AWS-Journey?style=for-the-badge&color=blue)
