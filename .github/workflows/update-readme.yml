@@ -1,0 +1,38 @@
+name: Auto Update README
+
+# Trigger: Chạy khi có code được push vào nhánh main
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Session-*/**' # Chỉ chạy khi có thay đổi trong các folder bài học
+      - 'update_readme.py'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Lấy code về máy ảo
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. Cài đặt Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    # 3. Chạy script Python cập nhật bảng
+    - name: Run update script
+      run: python update_readme.py
+
+    # 4. Commit và Push thay đổi lên lại GitHub (nếu có thay đổi)
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add README.md
+        git commit -m "Auto-update: Cập nhật danh sách bài học mới" || echo "No changes to commit"
+        git push
