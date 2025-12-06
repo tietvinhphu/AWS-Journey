@@ -15,8 +15,7 @@
 <!-- TABLE_START -->
 | Buổi học (Session) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |
 | :--- | :--- | :--- | :--- |
-| **[Session 01: EC2 Basics](./Session-01-EC2)** | ![EC2](https://img.shields.io/badge/AWS-EC2-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Done](https://img.shields.io/badge/Status-Completed-success?style=flat-square) | [![Youtube](https://img.shields.io/badge/View-Video-red?style=flat-square&logo=youtube)](LINK_VIDEO) |
-| **[Session 02: VPC & Network](./Session-02-VPC)** | ![VPC](https://img.shields.io/badge/AWS-VPC-8C4FFF?style=flat-square&logo=amazon-aws&logoColor=white) | ![Done](https://img.shields.io/badge/Status-Completed-success?style=flat-square) | [![Youtube](https://img.shields.io/badge/View-Video-red?style=flat-square&logo=youtube)](LINK_VIDEO) |
+| **[Session 03: IAM Security](./Session-03-IAM-Security)** | ![IAM-Security](https://img.shields.io/badge/AWS-IAM_Security-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 <!-- TABLE_END -->
 
 ---
