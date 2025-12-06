@@ -16,6 +16,7 @@
 | Buổi học (Session) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |
 | :--- | :--- | :--- | :--- |
 | **[Session 01: AWS Basic](./Session-01-AWS-Basic)** | ![AWS-Basic](https://img.shields.io/badge/AWS-AWS_Basic-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
+| **[Session 02: AWS EC2](./Session-02-AWS-EC2)** | ![AWS-EC2](https://img.shields.io/badge/AWS-AWS_EC2-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 | **[Session 03: IAM Security](./Session-03-IAM-Security)** | ![IAM-Security](https://img.shields.io/badge/AWS-IAM_Security-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 <!-- TABLE_END -->
 
