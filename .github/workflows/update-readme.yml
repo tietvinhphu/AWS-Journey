@@ -1,41 +1,36 @@
-name: Auto Update README
+name: Update Session Overview in README
 
-# Trigger: Chạy khi có code được push vào nhánh main
 on:
   push:
     branches:
       - main
+      - master
     paths:
-      - 'Session-*/**' # Chỉ chạy khi có thay đổi trong các folder bài học
-      - 'update_readme.py'
+      - 'Session*/**/README.md'
+      - 'scripts/sync_readme.py'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  update-readme:
     runs-on: ubuntu-latest
-
     steps:
-    # 1. Lấy code về máy ảo
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # 2. Cài đặt Python
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    # 3. Chạy script Python cập nhật bảng
-    - name: Run update script
-      run: python update_readme.py
+      - name: Run sync script
+        run: python scripts/sync_readme.py
 
-    # 4. Commit và Push thay đổi lên lại GitHub (nếu có thay đổi)
-    - name: Commit and Push changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add README.md
-        git commit -m "Auto-update: Cập nhật danh sách bài học mới" || echo "No changes to commit"
-        git push
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: auto-sync session overview to README" && git push)
