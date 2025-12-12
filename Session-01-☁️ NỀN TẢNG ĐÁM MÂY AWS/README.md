@@ -44,31 +44,60 @@ Sau khi hoàn thành module này, bạn sẽ:
 
 ```mermaid
 flowchart TB
-    subgraph Internet
-        User[👤 Người dùng]
+    %% Style Definitions
+    classDef user fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef aws fill:#fafafa,stroke:#232f3e,stroke-width:2px;
+    classDef region fill:#fff3e0,stroke:#ff9800,stroke-dasharray: 5 5;
+    classDef az fill:#f3e5f5,stroke:#9c27b0,stroke-width:1px;
+    classDef compute fill:#ff9900,stroke:#fff,stroke-width:1px,color:white;
+    classDef database fill:#3d5afe,stroke:#fff,stroke-width:1px,color:white;
+    classDef storage fill:#43a047,stroke:#fff,stroke-width:1px,color:white;
+
+    subgraph Internet["🌐 Internet Scope"]
+        User["👤 User / Client"]:::user
     end
 
-    subgraph AWS_Cloud["☁️ AWS Cloud"]
-        subgraph Region["🌍 AWS Region (vd: ap-southeast-1)"]
-            subgraph AZ1["Availability Zone 1"]
-                EC2_1[🖥️ EC2]
-                RDS_1[(🗄️ RDS)]
+    subgraph AWS["☁️ AWS Cloud"]
+        direction TB
+        
+        subgraph Region["� Region (e.g., ap-southeast-1)"]
+            direction TB
+            
+            subgraph AZ1["🏢 Availability Zone 1"]
+                direction TB
+                EC2_1["🖥️ EC2 Instance"]:::compute
+                RDS_1[("🗄️ RDS Primary")]:::database
             end
-            subgraph AZ2["Availability Zone 2"]
-                EC2_2[🖥️ EC2]
-                RDS_2[(🗄️ RDS)]
+            
+            subgraph AZ2["🏢 Availability Zone 2"]
+                direction TB
+                EC2_2["🖥️ EC2 Instance"]:::compute
+                RDS_2[("🗄️ RDS Standby")]:::database
             end
-            S3[📦 S3 Bucket]
+            
+            S3["📦 S3 Bucket"]:::storage
         end
     end
 
-    User -->|HTTPS| EC2_1
-    User -->|HTTPS| EC2_2
+    %% Routing
+    User ==>|HTTPS| EC2_1
+    User ==>|HTTPS| EC2_2
+    
+    %% Internal Connections
     EC2_1 --> RDS_1
     EC2_2 --> RDS_2
-    EC2_1 --> S3
-    EC2_2 --> S3
-    RDS_1 -.->|Sync| RDS_2
+    
+    %% Storage Access
+    EC2_1 -.->|Put/Get| S3
+    EC2_2 -.->|Put/Get| S3
+    
+    %% DB Replication
+    RDS_1 -.->|Sync Data| RDS_2
+
+    %% Styling Assigns
+    class AWS aws
+    class Region region
+    class AZ1,AZ2 az
 ```
 
 ---
