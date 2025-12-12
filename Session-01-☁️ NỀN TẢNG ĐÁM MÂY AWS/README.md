@@ -369,33 +369,46 @@ flowchart TB
     
     ```mermaid
     flowchart LR
+        %% Style Definitions
+        classDef free fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+        classDef cost fill:#fff3e0,stroke:#f57f17,stroke-width:2px;
+        classDef expensive fill:#ffebee,stroke:#c62828,stroke-width:2px,stroke-dasharray: 5 5;
+        classDef nodeStyle fill:#fff,stroke:#bfbfbf,stroke-width:1px;
+
         subgraph Inbound["📥 INBOUND (FREE)"]
-            I1[Upload data vào AWS]
-            I2[Transfer giữa services<br/>cùng AZ]
+            direction TB
+            I1["☁️ Upload data vào AWS"]:::nodeStyle
+            I2["🔄 Transfer giữa services<br/>cùng AZ"]:::nodeStyle
         end
     
         subgraph Compute["🖥️ COMPUTE (TÍNH TIỀN)"]
-            C1[EC2: Theo giờ/giây]
-            C2[Lambda: Theo request + duration]
-            C3[Fargate: Theo vCPU + Memory]
+            direction TB
+            C1["⏱️ EC2: Theo giờ/giây"]:::nodeStyle
+            C2["⚡ Lambda: Request + Duration"]:::nodeStyle
+            C3["🏗️ Fargate: vCPU + Memory"]:::nodeStyle
         end
     
         subgraph Storage["📦 STORAGE (TÍNH TIỀN)"]
-            S1[S3: GB/tháng]
-            S2[EBS: GB/tháng]
-            S3[RDS: Instance + Storage]
+            direction TB
+            S1["🗂️ S3: GB/tháng"]:::nodeStyle
+            S2["💾 EBS: GB/tháng"]:::nodeStyle
+            S3["🗄️ RDS: Instance + Storage"]:::nodeStyle
         end
     
         subgraph Outbound["📤 OUTBOUND (TÍNH TIỀN!)"]
-            O1[Download data ra Internet]
-            O2[Transfer giữa Regions]
+            direction TB
+            O1["🌐 Download ra Internet"]:::nodeStyle
+            O2["🌍 Transfer giữa Regions"]:::nodeStyle
         end
     
-        Inbound --> Compute
-        Compute --> Storage
-        Storage --> Outbound
-    
-        style Outbound fill:#ffcccc
+        Inbound ==> Compute
+        Compute ==> Storage
+        Storage ==> Outbound
+
+        %% Apply Styles
+        class Inbound free
+        class Compute,Storage cost
+        class Outbound expensive
     ```
     
     ### ⚠️ Hidden Costs (Chi phí ẩn) cần biết
