@@ -387,19 +387,19 @@ flowchart LR
     - Ví dụ: “AWS Academy Lab Project - Cloud Web Application Builder”
 - [ ]  **Bước 1.3**: Click vào **“Lab Instructions: Building a Highly Available, Scalable Web Application”**
 
-![image.png](Session-01-☁️ NỀN TẢNG ĐÁM MÂY AWS/images/9955f5fd-60ea-4b3a-ba97-a32fff1a4224.png)
+![image.png](images/9955f5fd-60ea-4b3a-ba97-a32fff1a4224.png)
 
 - [ ]  **Bước 1.4**: Cuộn xuống dưới → Click **“Next”** → Click **“Agree”** (Đồng ý điều khoản)
 - [ ]  **Bước 1.5**: Click nút **“Start Lab”** để khởi động môi trường
 
-![image.png](Session-01-☁️ NỀN TẢNG ĐÁM MÂY AWS/images/image.png)
+![image.png](images/image.png)
 
 - [ ]  **Bước 1.6**: **Chờ đèn chuyển xanh** 🟢
     - Đèn đỏ → Vàng → **Xanh lá** = Môi trường đã sẵn sàng
     - Thời gian chờ: 2-5 phút
     - ⚠️ **Lưu ý**: Lab có giới hạn **4 tiếng** và **$100 credit**
     
-    ![image.png](image%201.png)
+    ![image.png](images/image%201.png)
     
 
 ---
@@ -412,7 +412,7 @@ flowchart LR
     - Console sẽ mở trong tab mới
     - Bạn đã được đăng nhập tự động với IAM role của Lab
     
-    ![image.png](image%202.png)
+    ![image.png](images/image%202.png)
     
 
 - [ ]  **Bước 2.2**: Quan sát **các thành phần chính** của Console:
@@ -425,7 +425,7 @@ flowchart LR
     - Region phổ biến: `us-east-1` (N. Virginia), `ap-southeast-1` (Singapore)
     - ⚠️ **Lab thường chỉ cho phép một số Region nhất định!**
     
-    ![image.png](image%203.png)
+    ![image.png](images/image%203.png)
     
 
 ---
@@ -437,14 +437,14 @@ flowchart LR
 - [ ]  **Bước 3.1**: Sử dụng **Search bar**, gõ `EC2`
 - [ ]  **Bước 3.2**: Click vào kết quả **“EC2”** trong danh sách
 
-![image.png](image%204.png)
+![image.png](images/image%204.png)
 
 - [ ]  **Bước 3.3**: Quan sát **EC2 Dashboard**:
     - **Resources summary**: Số lượng instances, volumes, security groups…
     - **Launch instance**: Nút tạo VM mới
     - **Left navigation**: Menu điều hướng các feature của EC2
     
-    ![image.png](image%205.png)
+    ![image.png](images/image%205.png)
     
 
 - [ ]  **Bước 3.4**: Click vào **“Instances”** trong menu trái
@@ -456,7 +456,7 @@ flowchart LR
     - 🔴 **Stopped**: Đã dừng (không tính phí compute, vẫn tính storage)
     - ⚫ **Terminated**: Đã xóa hoàn toàn
     
-    ![image.png](image%206.png)
+    ![image.png](images/image%206.png)
     
 
 ---
@@ -468,7 +468,7 @@ flowchart LR
 - [ ]  **Bước 4.1**: Quay lại Console home, search **“S3”**
 - [ ]  **Bước 4.2**: Click vào dịch vụ **“S3”**
 
-![image.png](image%207.png)
+![image.png](images/image%207.png)
 
 - [ ]  **Bước 4.3**: Quan sát **S3 Dashboard**:
     - **Buckets**: Container lưu trữ objects (giống folder gốc)
@@ -496,7 +496,7 @@ flowchart LR
 - [ ]  **Bước 5.2**: Vào **AWS Billing Dashboard**
     - ⚠️ Trong môi trường Lab, quyền truy cập Billing có thể bị giới hạn
     
-    ![image.png](image%208.png)
+    ![image.png](images/image%208.png)
     
 
 - [ ]  **Bước 5.3**: Tìm hiểu các mục quan trọng:
@@ -520,12 +520,12 @@ flowchart TB
 
 - [ ]  **Bước 6.1:** Trên thanh tìm kiếm Console, gõ **“Budgets”**
     
-    ![image.png](image%209.png)
+    ![image.png](images/image%209.png)
     
 - [ ]  **Bước 6.2:** Click **Create budget**
 - [ ]  **Bước 6.3:** Chọn **Cost budget** (Quản lý theo tiền) → Click **Next**
     
-    ![image.png](image%2010.png)
+    ![image.png](images/image%2010.png)
     
 - [ ]  **Bước 6.4:** **Cấu hình Budget Amount:**
     
@@ -537,7 +537,7 @@ flowchart TB
     | Budget method | **Fixed** | Số tiền cố định |
     | Budgeted amount | **$10** | Hoặc số nhỏ hơn $100 credit |
     
-    ![image.png](image%2011.png)
+    ![image.png](images/image%2011.png)
     
 - [ ]  **Bước 6.5:** **Cấu hình Thresholds (Cảnh báo):**
     
@@ -547,20 +547,20 @@ flowchart TB
     | Threshold | **80%** | Cảnh báo khi xài 80% của $10 |
     | Trigger | **Actual** | Dựa trên chi phí thực tế |
     
-    ![image.png](image%2012.png)
+    ![image.png](images/image%2012.png)
     
 - [ ]  **Bước 6.3:** **Set Notification:**
     - Nhập **email của bạn** vào phần **“Email recipients”**
     
-    ![image.png](image%2013.png)
+    ![image.png](images/image%2013.png)
     
 - [ ]  **Bước 6.4:** Bấm **Confirm budget** → **Create**
     
-    ![image.png](image%2014.png)
+    ![image.png](images/image%2014.png)
     
-    ![image.png](image%2015.png)
+    ![image.png](images/image%2015.png)
     
-    ![image.png](image%2016.png)
+    ![image.png](images/image%2016.png)
     
 
 ---
@@ -571,7 +571,7 @@ flowchart TB
 - [ ]  **Bước 7.2:** Chọn **Billing & Cost Management Dashboard**
 - [ ]  **Bước 7.3:** Xem phần **Spend Summary** để biết tháng này đã chi bao nhiêu
     
-    ![image.png](image%2017.png)
+    ![image.png](images/image%2017.png)
     
 
 ---
@@ -584,7 +584,7 @@ flowchart TB
 - [ ]  **Bước 8.2**: Click **“End Lab”** (nếu không muốn tiếp tục)
     - ⚠️ Cấu hình sẽ được giữ nguyên, có thể Reset và Start lại
     
-    ![image.png](image%2018.png)
+    ![image.png](images/image%2018.png)
     
 
 - [ ]  **Bước 8.3**: **Kiểm tra lại** không có tài nguyên nào đang Running
