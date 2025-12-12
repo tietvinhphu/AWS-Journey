@@ -136,23 +136,37 @@ flowchart TB
     
     ```mermaid
     flowchart LR
+        %% Style Definitions
+        classDef iaas fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
+        classDef paas fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+        classDef saas fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+        classDef nodeStyle fill:#fff,stroke:#bfbfbf,stroke-width:1px;
+
         subgraph IaaS["🏭 IaaS - Thuê bếp"]
-            I1[Bạn tự làm bánh]
-            I2[Tự mang nguyên liệu]
-            I3[Quản lý nhiều nhất]
+            direction TB
+            I1["🛒 Bạn tự làm bánh"]:::nodeStyle
+            I2["🥩 Tự mang nguyên liệu"]:::nodeStyle
+            I3["🔧 Quản lý nhiều nhất"]:::nodeStyle
         end
     
         subgraph PaaS["👨‍🍳 PaaS - Thuê đầu bếp"]
-            P1[Bạn chỉ mang công thức]
-            P2[Họ có sẵn bếp + nguyên liệu]
-            P3[Quản lý vừa phải]
+            direction TB
+            P1["📝 Bạn chỉ mang công thức"]:::nodeStyle
+            P2["🍳 Họ có sẵn bếp + nguyên liệu"]:::nodeStyle
+            P3["⚖️ Quản lý vừa phải"]:::nodeStyle
         end
     
         subgraph SaaS["🍕 SaaS - Mua bánh sẵn"]
-            S1[Chỉ việc ăn]
-            S2[Họ lo hết mọi thứ]
-            S3[Quản lý ít nhất]
+            direction TB
+            S1["🍽️ Chỉ việc ăn"]:::nodeStyle
+            S2["📦 Họ lo hết mọi thứ"]:::nodeStyle
+            S3["⚡ Quản lý ít nhất"]:::nodeStyle
         end
+
+        %% Apply Styles
+        class IaaS iaas
+        class PaaS paas
+        class SaaS saas
     ```
     
     ### Chi tiết từng mô hình
