@@ -205,29 +205,40 @@ flowchart TB
     
     ```mermaid
     flowchart TB
+        %% Style Definitions
+        classDef public fill:#e1f5fe,stroke:#039be5,stroke-width:2px;
+        classDef private fill:#eceff1,stroke:#455a64,stroke-width:2px;
+        classDef hybrid fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px;
+        classDef nodeStyle fill:#fff,stroke:#bfbfbf,stroke-width:1px;
+
         subgraph Public["☁️ PUBLIC CLOUD"]
             direction TB
-            P1[100% trên AWS]
-            P2[Không có data center riêng]
-            P3[Tối ưu chi phí & tốc độ]
+            P1["🚀 100% trên AWS"]:::nodeStyle
+            P2["🚫 Không có data center riêng"]:::nodeStyle
+            P3["💰 Tối ưu chi phí & tốc độ"]:::nodeStyle
         end
     
-        subgraph Private["🏢 ON-PREMISES"]
+        subgraph Private["🏢 ON-PREMISES (PRIVATE)"]
             direction TB
-            O1[100% tại công ty]
-            O2[Tự quản lý điện, lạnh]
-            O3[Kiểm soát tuyệt đối]
+            O1["🔒 100% tại công ty"]:::nodeStyle
+            O2["🏗️ Tự quản lý điện, lạnh"]:::nodeStyle
+            O3["🛡️ Kiểm soát tuyệt đối"]:::nodeStyle
         end
     
-        subgraph Hybrid["🔗 HYBRID"]
+        subgraph Hybrid["🔗 HYBRID CLOUD"]
             direction TB
-            H1[Kết hợp cả hai]
-            H2[Sensitive data ở On-prem]
-            H3[Scale trên Cloud]
+            H1["🤝 Kết hợp cả hai"]:::nodeStyle
+            H2["🔐 Sensitive data ở On-prem"]:::nodeStyle
+            H3["📈 Scale trên Cloud"]:::nodeStyle
         end
     
-        Public --> Hybrid
-        Private --> Hybrid
+        Public ==> Hybrid
+        Private ==> Hybrid
+
+        %% Apply Styles
+        class Public public
+        class Private private
+        class Hybrid hybrid
     ```
     
     ### So sánh chi tiết
