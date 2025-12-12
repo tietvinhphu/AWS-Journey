@@ -1,12 +1,3 @@
-# Buổi 1
-
-Chủ Đề: Giới thiệu về Điện toán đám mây và Dịch vụ AWS
-Cập Nhật Lần Cuối: December 12, 2025 9:24 PM
-Ghi Chú: https://notebooklm.google.com/notebook/80035bcc-03db-400a-8816-8aa5c12be7e5
-Ngày Học: December 9, 2025
-Tags: Theory
-Độ Khó: Cơ Bản
-
 # ☁️ NỀN TẢNG ĐÁM MÂY AWS
 
 > 📅 Ngày học: [12/12/2025]
