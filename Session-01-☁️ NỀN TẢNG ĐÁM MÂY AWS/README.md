@@ -324,19 +324,30 @@ flowchart TB
     
     ```mermaid
     flowchart TB
+        %% Style Definitions
+        classDef bus fill:#e3f2fd,stroke:#1565c0,stroke-width:2px;
+        classDef tech fill:#fff3e0,stroke:#e65100,stroke-width:2px;
+        classDef nodeStyle fill:#fff,stroke:#bfbfbf,stroke-width:1px;
+
         subgraph Business_Perspective["💼 BUSINESS PERSPECTIVES"]
-            B[Business<br/>Chiến lược kinh doanh]
-            P[People<br/>Đào tạo nhân sự]
-            G[Governance<br/>Quản lý dự án]
+            direction TB
+            B["📊 Business<br/>(Chiến lược kinh doanh)"]:::nodeStyle
+            P["👥 People<br/>(Đào tạo nhân sự)"]:::nodeStyle
+            G["📜 Governance<br/>(Quản lý quy trình)"]:::nodeStyle
         end
     
         subgraph Technical_Perspective["⚙️ TECHNICAL PERSPECTIVES"]
-            PL[Platform<br/>Kiến trúc hệ thống]
-            S[Security<br/>Bảo mật, IAM]
-            O[Operations<br/>Giám sát, vận hành]
+            direction TB
+            PL["💻 Platform<br/>(Kiến trúc hệ thống)"]:::nodeStyle
+            S["🛡️ Security<br/>(Bảo mật, IAM)"]:::nodeStyle
+            O["🔧 Operations<br/>(Giám sát, vận hành)"]:::nodeStyle
         end
     
-        Business_Perspective --> Technical_Perspective
+        Business_Perspective ===> Technical_Perspective
+
+        %% Apply Styles
+        class Business_Perspective bus
+        class Technical_Perspective tech
     ```
     
     ### Chi tiết từng Perspective
