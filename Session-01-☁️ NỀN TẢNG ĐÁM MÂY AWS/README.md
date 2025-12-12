@@ -1,3 +1,12 @@
+# Buổi 1
+
+Chủ Đề: Giới thiệu về Điện toán đám mây và Dịch vụ AWS
+Cập Nhật Lần Cuối: December 12, 2025 9:24 PM
+Ghi Chú: https://notebooklm.google.com/notebook/80035bcc-03db-400a-8816-8aa5c12be7e5
+Ngày Học: December 9, 2025
+Tags: Theory
+Độ Khó: Cơ Bản
+
 # ☁️ NỀN TẢNG ĐÁM MÂY AWS
 
 > 📅 Ngày học: [12/12/2025]
@@ -378,19 +387,19 @@ flowchart LR
     - Ví dụ: “AWS Academy Lab Project - Cloud Web Application Builder”
 - [ ]  **Bước 1.3**: Click vào **“Lab Instructions: Building a Highly Available, Scalable Web Application”**
 
-![image.png](attachment:b8d388fb-3e64-4ba3-8da1-e00afd7593f9:9955f5fd-60ea-4b3a-ba97-a32fff1a4224.png)
+![image.png](Session-01-☁️ NỀN TẢNG ĐÁM MÂY AWS/images/9955f5fd-60ea-4b3a-ba97-a32fff1a4224.png)
 
 - [ ]  **Bước 1.4**: Cuộn xuống dưới → Click **“Next”** → Click **“Agree”** (Đồng ý điều khoản)
 - [ ]  **Bước 1.5**: Click nút **“Start Lab”** để khởi động môi trường
 
-![image.png](attachment:b597c62d-31b0-47bd-91f1-d1e7c544fd57:image.png)
+![image.png](Session-01-☁️ NỀN TẢNG ĐÁM MÂY AWS/images/image.png)
 
 - [ ]  **Bước 1.6**: **Chờ đèn chuyển xanh** 🟢
     - Đèn đỏ → Vàng → **Xanh lá** = Môi trường đã sẵn sàng
     - Thời gian chờ: 2-5 phút
     - ⚠️ **Lưu ý**: Lab có giới hạn **4 tiếng** và **$100 credit**
     
-    ![image.png](attachment:9f12b885-c83e-40ee-9ac3-0eb0367fa50c:image.png)
+    ![image.png](image%201.png)
     
 
 ---
@@ -403,7 +412,7 @@ flowchart LR
     - Console sẽ mở trong tab mới
     - Bạn đã được đăng nhập tự động với IAM role của Lab
     
-    ![image.png](attachment:afddadfe-23a6-4c6f-97d6-9627b1ddf214:image.png)
+    ![image.png](image%202.png)
     
 
 - [ ]  **Bước 2.2**: Quan sát **các thành phần chính** của Console:
@@ -416,7 +425,7 @@ flowchart LR
     - Region phổ biến: `us-east-1` (N. Virginia), `ap-southeast-1` (Singapore)
     - ⚠️ **Lab thường chỉ cho phép một số Region nhất định!**
     
-    ![image.png](attachment:4e66427c-e771-40be-abcd-94c93b7174aa:image.png)
+    ![image.png](image%203.png)
     
 
 ---
@@ -428,14 +437,14 @@ flowchart LR
 - [ ]  **Bước 3.1**: Sử dụng **Search bar**, gõ `EC2`
 - [ ]  **Bước 3.2**: Click vào kết quả **“EC2”** trong danh sách
 
-![image.png](attachment:8fc07313-c943-4220-833e-27d611643569:image.png)
+![image.png](image%204.png)
 
 - [ ]  **Bước 3.3**: Quan sát **EC2 Dashboard**:
     - **Resources summary**: Số lượng instances, volumes, security groups…
     - **Launch instance**: Nút tạo VM mới
     - **Left navigation**: Menu điều hướng các feature của EC2
     
-    ![image.png](attachment:6f2958fc-446b-4408-936f-217c844d218a:image.png)
+    ![image.png](image%205.png)
     
 
 - [ ]  **Bước 3.4**: Click vào **“Instances”** trong menu trái
@@ -447,7 +456,7 @@ flowchart LR
     - 🔴 **Stopped**: Đã dừng (không tính phí compute, vẫn tính storage)
     - ⚫ **Terminated**: Đã xóa hoàn toàn
     
-    ![image.png](attachment:2e29d6a6-3e87-487f-9b6d-af05ea8c6091:image.png)
+    ![image.png](image%206.png)
     
 
 ---
@@ -459,7 +468,7 @@ flowchart LR
 - [ ]  **Bước 4.1**: Quay lại Console home, search **“S3”**
 - [ ]  **Bước 4.2**: Click vào dịch vụ **“S3”**
 
-![image.png](attachment:d9e4f4ca-8627-4d10-a109-9061b2d93b7b:image.png)
+![image.png](image%207.png)
 
 - [ ]  **Bước 4.3**: Quan sát **S3 Dashboard**:
     - **Buckets**: Container lưu trữ objects (giống folder gốc)
@@ -487,7 +496,7 @@ flowchart LR
 - [ ]  **Bước 5.2**: Vào **AWS Billing Dashboard**
     - ⚠️ Trong môi trường Lab, quyền truy cập Billing có thể bị giới hạn
     
-    ![image.png](attachment:bfc03127-c9c5-4e9f-a751-a824942b4ad5:image.png)
+    ![image.png](image%208.png)
     
 
 - [ ]  **Bước 5.3**: Tìm hiểu các mục quan trọng:
@@ -511,14 +520,14 @@ flowchart TB
 
 - [ ]  **Bước 6.1:** Trên thanh tìm kiếm Console, gõ **“Budgets”**
     
-    ![image.png](attachment:526b3991-67bf-4f41-ba46-96e0f732e1a7:image.png)
+    ![image.png](image%209.png)
     
-- [ ]  **Bước 2.2:** Click **Create budget**
-- [ ]  **Bước 2.3:** Chọn **Cost budget** (Quản lý theo tiền) → Click **Next**
+- [ ]  **Bước 6.2:** Click **Create budget**
+- [ ]  **Bước 6.3:** Chọn **Cost budget** (Quản lý theo tiền) → Click **Next**
     
-    ![image.png](attachment:25754341-d7e8-45a8-9be4-2091b37e41d2:image.png)
+    ![image.png](image%2010.png)
     
-- [ ]  **Bước 2.4:** **Cấu hình Budget Amount:**
+- [ ]  **Bước 6.4:** **Cấu hình Budget Amount:**
     
     
     | Field | Giá trị | Giải thích |
@@ -528,9 +537,9 @@ flowchart TB
     | Budget method | **Fixed** | Số tiền cố định |
     | Budgeted amount | **$10** | Hoặc số nhỏ hơn $100 credit |
     
-    ![image.png](attachment:5e452648-db6e-4092-a175-1ee9dd5e927f:image.png)
+    ![image.png](image%2011.png)
     
-- [ ]  **Bước 6.2:** **Cấu hình Thresholds (Cảnh báo):**
+- [ ]  **Bước 6.5:** **Cấu hình Thresholds (Cảnh báo):**
     
     
     | Field | Giá trị | Ý nghĩa |
@@ -538,20 +547,20 @@ flowchart TB
     | Threshold | **80%** | Cảnh báo khi xài 80% của $10 |
     | Trigger | **Actual** | Dựa trên chi phí thực tế |
     
-    ![image.png](attachment:34e975b6-f3da-44e3-8ac8-806bfa566df2:image.png)
+    ![image.png](image%2012.png)
     
 - [ ]  **Bước 6.3:** **Set Notification:**
     - Nhập **email của bạn** vào phần **“Email recipients”**
     
-    ![image.png](attachment:b246cefe-2ea2-4c53-85df-c78a7d17b918:image.png)
+    ![image.png](image%2013.png)
     
 - [ ]  **Bước 6.4:** Bấm **Confirm budget** → **Create**
     
-    ![image.png](attachment:81496e46-0e2a-4736-9ca3-a74270db9064:image.png)
+    ![image.png](image%2014.png)
     
-    ![image.png](attachment:6debb44e-e283-4c93-b0a8-5fcbbea6d285:image.png)
+    ![image.png](image%2015.png)
     
-    ![image.png](attachment:a77e59da-6b10-4d65-b997-c649b72a48ab:image.png)
+    ![image.png](image%2016.png)
     
 
 ---
@@ -562,7 +571,7 @@ flowchart TB
 - [ ]  **Bước 7.2:** Chọn **Billing & Cost Management Dashboard**
 - [ ]  **Bước 7.3:** Xem phần **Spend Summary** để biết tháng này đã chi bao nhiêu
     
-    ![image.png](attachment:a3eddd14-dd79-4020-b56f-0912df296858:image.png)
+    ![image.png](image%2017.png)
     
 
 ---
@@ -575,7 +584,7 @@ flowchart TB
 - [ ]  **Bước 8.2**: Click **“End Lab”** (nếu không muốn tiếp tục)
     - ⚠️ Cấu hình sẽ được giữ nguyên, có thể Reset và Start lại
     
-    ![image.png](attachment:a701015f-37f7-4d2f-8dfe-a3cefb25f246:image.png)
+    ![image.png](image%2018.png)
     
 
 - [ ]  **Bước 8.3**: **Kiểm tra lại** không có tài nguyên nào đang Running
