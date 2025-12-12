@@ -15,7 +15,7 @@
 <!-- TABLE_START -->
 | Buổi học (Session) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |
 | :--- | :--- | :--- | :--- |
-| **[Session 01: ☁️ NỀN TẢNG ĐÁM MÂY AWS](./Session-01-%E2%98%81%EF%B8%8F%20N%E1%BB%80N%20T%E1%BA%A2NG%20%C4%90%C3%81M%20M%C3%82Y%20AWS)** | <ul><li><strong>Cloud Computing</strong> là việc thuê hạ tầng IT qua Internet với mô hình <strong>pay-as-you-go</strong> (dùng bao nhiêu trả bấy nhiêu)</li><li>Có <strong>3 mô hình dịch vụ</strong> (IaaS, PaaS, SaaS) và <strong>3 mô hình triển khai</strong> (Cloud, On-premises, Hybrid) - nắm vững để chọn giải pháp phù hợp</li><li><strong>Thiết lập AWS Budget</strong> là việc <strong>BẮT BUỘC đầu tiên</strong> trước khi làm bất kỳ điều gì trên AWS để kiểm soát chi phí</li></ul> | ![Done](https://img.shields.io/badge/Status-Completed-success?style=flat-square) | _Updating..._ |
+| **[Session 01: ☁️ NỀN TẢNG ĐÁM MÂY AWS](./Session-01-☁️ NỀN TẢNG ĐÁM MÂY AWS)** | ![☁️ NỀN TẢNG ĐÁM MÂY AWS](https://img.shields.io/badge/AWS-☁️ NỀN TẢNG ĐÁM MÂY AWS-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 | **[Session 02: AWS EC2](./Session-02-AWS-EC2)** | ![AWS-EC2](https://img.shields.io/badge/AWS-AWS_EC2-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 | **[Session 03: IAM Security](./Session-03-IAM-Security)** | ![IAM-Security](https://img.shields.io/badge/AWS-IAM_Security-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 <!-- TABLE_END -->
