@@ -6,7 +6,7 @@ on:
       - main
       - master
     paths:
-      - 'Session*/**/README.md'
+
       - 'Hành trình lên mây/**/README.md'
       - 'scripts/sync_readme.py'
   workflow_dispatch:

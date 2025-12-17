@@ -44,8 +44,8 @@ def update_main_readme():
         
     new_lines = []
     for line in lines:
-        # Check if line contains a Session link in the first column
-        # Format: | **[Session ...](path)** | ...
+        # Check if line contains a Session or Lab link in the first column
+        # Format: | **[Name ...](path)** | ...
         match = re.search(r'\|\s*\*\*\[(.*?)\]\((.*?)\)\*\*\s*\|', line)
         if match:
             session_name = match.group(1)
