@@ -139,14 +139,14 @@ sequenceDiagram
 
 ```mermaid
 flowchart TB
-    subgraph AWS["☁️ AWS Responsibility<br>Security OF the Cloud"]
+    subgraph AWS["☁️ AWS: Security OF the Cloud"]
         A[Physical Security]
         B[Hardware]
         C[Network Infrastructure]
         D[Virtualization]
     end
 
-    subgraph Customer["👤 Customer Responsibility<br>Security IN the Cloud"]
+    subgraph Customer["👤 Customer: Security IN the Cloud"]
         E[IAM - Identity and Access]
         F[🔐 MFA Configuration]
         G[Application Security]
