@@ -15,7 +15,7 @@
 <!-- TABLE_START -->
 | Bài Lab (Lab) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |
 | :--- | :--- | :--- | :--- |
-| **[Lab-01: AWS Account - Khởi tạo & Quản lý Tài khoản AWS](./Hành%20trình%20lên%20mây/Lab-01%20-%20AWS%20Account%20-%20Khởi%20tạo%20%26%20Quản%20lý%20Tài%20khoản%20AWS)** | <ul><li><strong>Tạo tài khoản AWS miễn phí</strong> từ A-Z với 9 bước chi tiết, tránh bị charge tiền không mong muốn</li><li><strong>Quản lý tài khoản hiệu quả:</strong> Xem Account ID, cập nhật thông tin, tạo Account Alias cho URL đăng nhập dễ nhớ</li><li><strong>Áp dụng Best Practices 2025:</strong> Bảo vệ Root User bằng MFA, thiết lập Billing Alert, và các nguyên tắc bảo mật quan trọng</li></ul> | ![Done](https://img.shields.io/badge/Status-Completed-success?style=flat-square)| [![Youtube](https://img.shields.io/badge/View-Video-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fDhiEsKYiHY) |
+| **[Lab-01: AWS Account - Khởi tạo & Quản lý Tài khoản AWS](./Hành%20trình%20lên%20mây/Lab-01%20-%20AWS%20Account%20-%20Khởi%20tạo%20%26%20Quản%20lý%20Tài%20khoản%20AWS)** | <ul><li><strong>Tạo tài khoản AWS miễn phí</strong> từ A-Z với 9 bước chi tiết, tránh bị charge tiền không mong muốn</li><li><strong>Quản lý tài khoản hiệu quả:</strong> Xem Account ID, cập nhật thông tin, tạo Account Alias cho URL đăng nhập dễ nhớ</li><li><strong>Áp dụng Best Practices 2025:</strong> Bảo vệ Root User bằng MFA, thiết lập Billing Alert, và các nguyên tắc bảo mật quan trọng</li></ul> | ![Done](https://img.shields.io/badge/Status-Completed-success?style=flat-square) | [![Youtube](https://img.shields.io/badge/View-Video-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fDhiEsKYiHY) |
 <!-- TABLE_END -->
 
 ---
