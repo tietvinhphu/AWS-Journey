@@ -20,6 +20,14 @@
 | **[Session 03: IAM Security](./Session-03-IAM-Security)** | ![IAM-Security](https://img.shields.io/badge/AWS-IAM_Security-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 <!-- TABLE_END -->
 
+<br> ## 🗂️ Danh sách bài lab (Laboratory Overview)
+
+<!-- TABLE_START -->
+| Bài Lab (Lab) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |
+| :--- | :--- | :--- | :--- |
+| **[Lab-01: AWS Account - Khởi tạo & Quản lý Tài khoản AWS](./Hành%20trình%20lên%20mây/Lab-01%20-%20AWS%20Account%20-%20Khởi%20tạo%20%26%20Quản%20lý%20Tài%20khoản%20AWS)** | _Updating..._ | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
+<!-- TABLE_END -->
+
 ---
 ### 📈 Thống kê
 ![Commits](https://img.shields.io/github/last-commit/tietvinhphu/AWS-Journey?style=for-the-badge&color=blue)
