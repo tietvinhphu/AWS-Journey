@@ -15,10 +15,11 @@
 
 ## 🔗 Resources
 
-| 📺 **Video** |  [1.Tạo Tài Khoản AWS Miễn Phí | Hướng Dẫn Chi Tiết Cho Người Mới](https://www.youtube.com/watch?v=fDhiEsKYiHY)  |
-| --- | --- |
-| 🆓 **AWS Free Tier** | https://aws.amazon.com/free |
-| 🔗 **AWS Console** | https://console.aws.amazon.com |
+| Loại tài nguyên (Type) | Nội dung (Content) |
+| :--- | :--- |
+| 📺 **Video hướng dẫn** | [1.Tạo Tài Khoản AWS Miễn Phí - Hướng Dẫn Chi Tiết Cho Người Mới](https://www.youtube.com/watch?v=fDhiEsKYiHY) |
+| 🆓 **AWS Free Tier** | [Trang chủ AWS Free Tier](https://aws.amazon.com/free) |
+| 🔗 **AWS Console** | [Link đăng nhập AWS Console](https://console.aws.amazon.com) |
 
 ---
 
@@ -28,15 +29,15 @@
 
 ```mermaid
 flowchart TD
-    A[🌐 Truy cập [aws.amazon.com](http://aws.amazon.com)] --> B[📧 Nhập Email & Tên tài khoản]
-    B --> C{✉️ Xác thực Email}
-    C -->|Nhập mã OTP| D[🔐 Thiết lập Mật khẩu Root]
-    D --> E[📋 Điền thông tin liên hệ]
-    E --> F[💳 Thêm phương thức thanh toán]
-    F --> G{📱 Xác thực SĐT}
-    G -->|Nhập PIN qua cuộc gọi| H[📦 Chọn Support Plan]
-    H --> I[⏳ Chờ kích hoạt]
-    I --> J[✅ Truy cập AWS Console]
+    A["🌐 Truy cập aws.amazon.com"] --> B["📧 Nhập Email & Tên tài khoản"]
+    B --> C{"✉️ Xác thực Email"}
+    C -->|Nhập mã OTP| D["🔐 Thiết lập Mật khẩu Root"]
+    D --> E["📋 Điền thông tin liên hệ"]
+    E --> F["💳 Thêm phương thức thanh toán"]
+    F --> G{"📱 Xác thực SĐT"}
+    G -->|Nhập PIN qua cuộc gọi| H["📦 Chọn Support Plan"]
+    H --> I["⏳ Chờ kích hoạt"]
+    I --> J["✅ Truy cập AWS Console"]
     
     style A fill:#ff9900,color:#fff
     style J fill:#28a745,color:#fff
@@ -88,9 +89,9 @@ flowchart TD
     
     ```mermaid
     flowchart LR
-        A[📧 Email] --> B[💳 Thẻ thanh toán]
-        B --> C[📱 Số điện thoại]
-        C --> D[✅ Verified]
+        A["📧 Email"] --> B["💳 Thẻ thanh toán"]
+        B --> C["📱 Số điện thoại"]
+        C --> D["✅ Verified"]
         
         style D fill:#28a745,color:#fff
     ```
@@ -135,18 +136,18 @@ flowchart TD
 ### 🗺️ Tổng quan các Phase
 
 ```mermaid
-flowchart LR
+flowchart TD
     subgraph Phase1["Phase 1: Đăng ký"]
-        A1[Bước 1-4]
+        A1["Bước 1-4"]
     end
     subgraph Phase2["Phase 2: Xác thực"]
-        A2[Bước 5-7]
+        A2["Bước 5-7"]
     end
     subgraph Phase3["Phase 3: Hoàn tất"]
-        A3[Bước 8-9]
+        A3["Bước 8-9"]
     end
     subgraph Phase4["Phase 4: Quản lý"]
-        A4[Account ID<br>Settings<br>Alias]
+        A4["Account ID<br>Settings<br>Alias"]
     end
     
     Phase1 --> Phase2 --> Phase3 --> Phase4
@@ -362,13 +363,13 @@ Số tiền này sẽ được **HOÀN LẠI sau 3-5 ngày làm việc**.
 
 ```mermaid
 flowchart TD
-    A[AWS Console] --> B[Account Menu]
-    B --> C[Xem Account ID]
-    B --> D[Account Settings]
-    B --> E[IAM Dashboard]
-    D --> F[Cập nhật Contact Info]
-    D --> G[Cập nhật Payment]
-    E --> H[Tạo Account Alias]
+    A["AWS Console"] --> B["Account Menu"]
+    B --> C["Xem Account ID"]
+    B --> D["Account Settings"]
+    B --> E["IAM Dashboard"]
+    D --> F["Cập nhật Contact Info"]
+    D --> G["Cập nhật Payment"]
+    E --> H["Tạo Account Alias"]
     
     style A fill:#ff9900,color:#fff
     style C fill:#3498db,color:#fff
