@@ -3,7 +3,7 @@ import re
 import urllib.parse
 
 # Configuration
-LAB_ROOT_DIR = 'Hành trình lên mây'
+LAB_ROOT_DIR = 'The First Cloud Journey'
 README_FILENAME = 'README.md'
 TABLE_START_MARKER = '<!-- TABLE_START -->'
 TABLE_END_MARKER = '<!-- TABLE_END -->'
