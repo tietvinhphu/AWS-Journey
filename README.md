@@ -27,9 +27,6 @@
 | :--- | :--- | :--- | :--- |
 <<<<<<< HEAD
 | **[Lab-01: AWS Account - Khởi tạo & Quản lý Tài khoản AWS](./Hành%20trình%20lên%20mây/Lab-01%20-%20AWS%20Account%20-%20Khởi%20tạo%20%26%20Quản%20lý%20Tài%20khoản%20AWS)** | <ul><li>Hướng dẫn khởi tạo tài khoản AWS Free Tier</li><li>Thiết lập Multi-Factor Authentication (MFA) để bảo mật tài khoản root</li><li>Thiết lập AWS Budgets để quản lý chi phí</li><li>Tạo tài khoản IAM User đầu tiên cho mục đích quản trị</li></ul> | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | [![Youtube](https://img.shields.io/badge/View-Video-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fDhiEsKYiHY) |
-=======
-| **[Lab-01: AWS Account - Khởi tạo & Quản lý Tài khoản AWS](./Hành%20trình%20lên%20mây/Lab-01%20-%20AWS%20Account%20-%20Khởi%20tạo%20%26%20Quản%20lý%20Tài%20khoản%20AWS)** | <ul><li><strong>Tạo tài khoản AWS miễn phí</strong> từ A-Z với 9 bước chi tiết, tránh bị charge tiền không mong muốn</li><li><strong>Quản lý tài khoản hiệu quả:</strong> Xem Account ID, cập nhật thông tin, tạo Account Alias cho URL đăng nhập dễ nhớ</li><li><strong>Áp dụng Best Practices 2025:</strong> Bảo vệ Root User bằng MFA, thiết lập Billing Alert, và các nguyên tắc bảo mật quan trọng</li></ul> | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
->>>>>>> 41fe83fdf2fbf83be4c37595879d996e2dfd0d17
 <!-- TABLE_END -->
 
 ---
