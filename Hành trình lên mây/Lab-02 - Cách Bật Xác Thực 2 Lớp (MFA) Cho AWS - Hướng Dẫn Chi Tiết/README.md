@@ -18,12 +18,11 @@ Sau khi hoàn thành, bạn sẽ có thể:
 ## 🔗 Resources
 
 | Loại | Link | Mô tả |
-| --- | --- | --- |
-| 📺 **Video** | [Điền Link YouTube] | Video hướng dẫn thực hành |
-| 🐙 **Source Code** | [Điền Link GitHub] | Scripts và configs mẫu |
+| :--- | :--- | :--- |
 | 📖 **AWS Docs** | [IAM MFA Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html) | Tài liệu chính thức AWS |
-| 🔧 **Google Authenticator** | [iOS](https://apps.apple.com/app/google-authenticator/id388497605) / [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) | App Virtual MFA |
-| 🔧 **Authy** | [Download](https://authy.com/download/) | App Virtual MFA (hỗ trợ backup) |
+| 🔧 **Google Authenticator** | [iOS](https://apps.apple.com/app/google-authenticator/id388497605) / [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) | App Virtual MFA phổ biến |
+| 🔧 **Authy** | [Download](https://authy.com/download/) | App Virtual MFA hỗ trợ backup |
+| 🔐 **YubiKey** | [Yubico Store](https://www.yubico.com/) | Hardware MFA (Bảo mật cao nhất) |
 
 ---
 
@@ -147,14 +146,14 @@ sequenceDiagram
 
 ```mermaid
 flowchart TB
-    subgraph AWS["☁️ AWS Responsibility - Security OF the Cloud"]
+    subgraph AWS["☁️ AWS Responsibility<br>Security OF the Cloud"]
         A[Physical Security]
         B[Hardware]
         C[Network Infrastructure]
         D[Virtualization]
     end
 
-    subgraph Customer["👤 Customer Responsibility - Security IN the Cloud"]
+    subgraph Customer["👤 Customer Responsibility<br>Security IN the Cloud"]
         E[IAM - Identity and Access]
         F[🔐 MFA Configuration]
         G[Application Security]
@@ -335,71 +334,50 @@ flowchart TB
     style D fill:#FF9800,color:#fff
     style G fill:#2196F3,color:#fff
     style J fill:#4CAF50,color:#fff
-
-```
-
----
+### 1️⃣ Truy cập trang nạp MFA
 
 - [ ]  **Bước 3.1:** Click vào **tên tài khoản** ở góc trên bên phải của Console
-
----
-
 - [ ]  **Bước 3.2:** Chọn **"Security credentials"** từ dropdown menu
-
----
-
 - [ ]  **Bước 3.3:** Scroll xuống tìm phần **"Multi-factor authentication (MFA)"**
-
----
-
 - [ ]  **Bước 3.4:** Click nút **"Activate MFA"** (hoặc "Assign MFA device")
 
----
+### 2️⃣ Thiết lập thiết bị
 
 - [ ]  **Bước 3.5:** Trong popup hiện ra:
-    - Đặt tên cho MFA device (ví dụ: "my-phone-authenticator")
+    - Đặt tên cho MFA device (ví dụ: `my-phone-authenticator`)
     - Chọn **"Authenticator app"**
     - Click **"Next"**
-
----
-
 - [ ]  **Bước 3.6:** AWS hiển thị **QR Code** trên màn hình
 
----
+### 3️⃣ Đồng bộ với điện thoại
 
-- [ ]  **Bước 3.7:** Mở ứng dụng Google Authenticator/Authy trên điện thoại:
+- [ ]  **Bước 3.7:** Mở ứng dụng **Google Authenticator** hoặc **Authy** trên điện thoại:
     - Nhấn dấu **"+"** hoặc **"Add account"**
     - Chọn **"Scan QR code"**
     - Hướng camera vào QR code trên màn hình máy tính
 
----
+### 4️⃣ Xác thực 2 bước (Bước quan trọng)
 
-- [ ]  **Bước 3.8:** Sau khi scan thành công, app sẽ hiển thị mã 6 số đầu tiên
-- [ ]  **Bước 3.9:** Nhập mã 6 số này vào ô **"MFA code 1"** trên AWS Console
-- [ ]  **Bước 3.10:** ⏳ **Đợi 30 giây** cho mã mới xuất hiện
-- [ ]  **Bước 3.11:** Nhập mã 6 số MỚI vào ô **"MFA code 2"**
+- [ ]  **Bước 3.8:** Sau khi scan thành công, app sẽ hiển thị mã 6 số liên tục thay đổi
+- [ ]  **Bước 3.9:** Nhập mã 6 số hiện tại vào ô **"MFA code 1"** trên AWS Console
+- [ ]  **Bước 3.10:** ⏳ **Đợi khoảng 30 giây** cho đến khi mã trên điện thoại đổi sang số mới
+- [ ]  **Bước 3.11:** Nhập mã 6 số MỚI (khác mã 1) vào ô **"MFA code 2"**
 
-> ⚠️ QUAN TRỌNG: Hai mã phải là HAI MÃ KHÁC NHAU, LIÊN TIẾP. Không nhập cùng một mã!
-> 
-
----
+> ⚠️ **LƯU Ý:** Bạn phải nhập 2 mã **khác nhau** và **liên tiếp** để AWS xác nhận bạn thực sự sở hữu thiết bị.
 
 - [ ]  **Bước 3.12:** Click nút **"Add MFA"** hoặc **"Assign MFA"**
-- [ ]  **Bước 3.13:** Xác nhận thông báo thành công: **"MFA device assigned successfully"**
+- [ ]  **Bước 3.13:** Xác nhận thông báo thành công: **"MFA device assigned successfully"** ✅
 
 ---
 
-### ✅ Phase 4: Kiểm tra (Verify)
+### 5️⃣ Kiểm tra đăng nhập (Bước cuối)
 
 - [ ]  **Bước 4.1:** Click vào tên tài khoản → Chọn **"Sign out"**
 - [ ]  **Bước 4.2:** Đăng nhập lại với Username và Password
 - [ ]  **Bước 4.3:** AWS sẽ hiển thị form yêu cầu **nhập mã MFA**
-
----
-
 - [ ]  **Bước 4.4:** Mở app Google Authenticator/Authy, lấy mã 6 số hiện tại
 - [ ]  **Bước 4.5:** Nhập mã vào form và click **"Submit"**
-- [ ]  **Bước 4.6:** ✅ **Thành công!** Bạn đã vào được AWS Console với MFA
+- [ ]  **Bước 4.6:** ✅ **Thành công!** Bạn đã vào được AWS Console với lớp bảo mật MFA
 
 ---
 
