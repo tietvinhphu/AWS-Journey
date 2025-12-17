@@ -26,13 +26,6 @@ Sau khi hoàn thành, bạn sẽ có thể:
 
 ---
 
-## 📚 Knowledge Base (Lý thuyết)
-
-> 💡 Tip Notion: Sau khi paste, chọn từng heading bên dưới → Gõ /toggle hoặc click menu ⋮⋮ → Turn into → Toggle heading để tạo danh sách đóng/mở.
-> 
-
----
-
 ### 🏗️ Kiến trúc tổng quan - MFA trong AWS Security
 
 ```mermaid
