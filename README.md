@@ -25,7 +25,7 @@
 <!-- TABLE_START -->
 | Bài Lab (Lab) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |
 | :--- | :--- | :--- | :--- |
-| **[Lab-01: AWS Account - Khởi tạo & Quản lý Tài khoản AWS](./Hành%20trình%20lên%20mây/Lab-01%20-%20AWS%20Account%20-%20Khởi%20tạo%20%26%20Quản%20lý%20Tài%20khoản%20AWS)** | _Updating..._ | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
+| **[Lab-01: AWS Account - Khởi tạo & Quản lý Tài khoản AWS](./Hành%20trình%20lên%20mây/Lab-01%20-%20AWS%20Account%20-%20Khởi%20tạo%20%26%20Quản%20lý%20Tài%20khoản%20AWS)** | <ul><li>Hướng dẫn khởi tạo tài khoản AWS Free Tier</li><li>Thiết lập Multi-Factor Authentication (MFA) để bảo mật tài khoản root</li><li>Thiết lập AWS Budgets để quản lý chi phí</li><li>Tạo tài khoản IAM User đầu tiên cho mục đích quản trị</li></ul> | ![Doing](https://img.shields.io/badge/Status-Learning...-yellow?style=flat-square) | _Updating..._ |
 <!-- TABLE_END -->
 
 ---
