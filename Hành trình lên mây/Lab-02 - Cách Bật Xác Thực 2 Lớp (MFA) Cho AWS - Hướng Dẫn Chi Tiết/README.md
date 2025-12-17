@@ -139,25 +139,36 @@ sequenceDiagram
 
 ```mermaid
 flowchart TB
-    subgraph AWS["☁️ AWS: Security OF the Cloud"]
+    subgraph AWS_Zone ["AWS (Nhà cung cấp)"]
+        direction TB
+        Title1["☁️ Security <b>OF</b> the Cloud"]:::header
         A[Physical Security]
         B[Hardware]
         C[Network Infrastructure]
         D[Virtualization]
+        
+        Title1 ~~~ A
+        A --> B --> C --> D
     end
 
-    subgraph Customer["👤 Customer: Security IN the Cloud"]
+    subgraph Customer_Zone ["Customer (Bạn)"]
+        direction TB
+        Title2["👤 Security <b>IN</b> the Cloud"]:::header
         E[IAM - Identity and Access]
         F[🔐 MFA Configuration]
         G[Application Security]
         H[Data Encryption]
+        
+        Title2 ~~~ E
+        E --> F --> G --> H
     end
 
-    AWS --> Customer
+    AWS_Zone --> Customer_Zone
 
+    classDef header fill:#fff,stroke:none,font-weight:bold,font-size:14px
     style F fill:#FF5722,color:#fff,stroke:#FF5722,stroke-width:3px
-    style Customer fill:#E3F2FD
-
+    style Customer_Zone fill:#E3F2FD
+    style AWS_Zone fill:#FFF3E0
 ```
 
 **MFA nằm trong "Security IN the Cloud"** - đây là trách nhiệm của khách hàng, không phải AWS.
@@ -327,6 +338,8 @@ flowchart TB
     style D fill:#FF9800,color:#fff
     style G fill:#2196F3,color:#fff
     style J fill:#4CAF50,color:#fff
+```
+
 ### 1️⃣ Truy cập trang nạp MFA
 
 - [ ]  **Bước 3.1:** Click vào **tên tài khoản** ở góc trên bên phải của Console
