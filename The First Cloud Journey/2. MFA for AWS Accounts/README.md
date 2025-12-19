@@ -1,4 +1,4 @@
-# MFA CHO TÀI KHOẢN AWS - TÀI LIỆU HƯỚNG DẪN HỌC TẬP
+# MFA CHO TÀI KHOẢN AWS
 
 ## 📌 Overview
 

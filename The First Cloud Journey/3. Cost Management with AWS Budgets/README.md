@@ -1,4 +1,4 @@
-# QUẢN LÝ CHI PHÍ VỚI AWS BUDGETS - TÀI LIỆU HƯỚNG DẪN HỌC TẬP
+# QUẢN LÝ CHI PHÍ VỚI AWS BUDGETS
 
 ## 📌 Overview
 
