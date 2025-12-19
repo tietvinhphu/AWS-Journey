@@ -2,6 +2,7 @@
 <div align="center">
   <img src="../images/2.%20AWS%20Multi-Factor%20Authentication%20(MFA).png" alt="AWS MFA Banner" width="100%">
 </div>
+
 ### 📌 Overview
 
 - **MFA (Multi-Factor Authentication)** là lớp bảo mật thiết yếu nhất, yêu cầu 2 yếu tố xác thực: mật khẩu (something you know) + mã từ thiết bị MFA (something you have).

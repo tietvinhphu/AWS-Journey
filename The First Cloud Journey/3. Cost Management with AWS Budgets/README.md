@@ -1,7 +1,8 @@
 # 💰 QUẢN LÝ CHI PHÍ VỚI AWS BUDGET
 <div align="center">
-  <img src="../images/AWS%20Cost%20Management.png" alt="AWS Cost Management" width="100%">
+  <img src="../images/3.%20AWS%20Cost%20Management.png" alt="AWS Cost Management" width="100%">
 </div>
+
 ### 📌 Overview
 
 - **AWS Budgets** là công cụ thiết lập ngân sách tùy chỉnh để theo dõi chi phí và mức sử dụng tài nguyên AWS, gửi cảnh báo khi vượt ngưỡng.
