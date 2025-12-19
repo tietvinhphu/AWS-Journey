@@ -21,6 +21,7 @@
 | --- | --- |
 | 📺 **Video YouTube** | [Điền Link Video] |
 | 📖 **AWS Docs** | [AWS Budgets Documentation](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) |
+| 🧮 **Calculator** | [AWS Pricing Calculator](https://calculator.aws/) |
 
 ---
 
