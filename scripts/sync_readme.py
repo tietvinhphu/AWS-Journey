@@ -142,6 +142,9 @@ def update_readme():
             # Skip hidden folders
             if folder_name.startswith('.'): continue
             
+            # Skip folders that don't start with a number (e.g., 'images')
+            if not re.match(r'^\d+\.', folder_name): continue
+
             lab_readme_path = os.path.join(lab_root_full_path, folder_name, 'README.md')
             
             # --- New: Ensure Back to Top ---
