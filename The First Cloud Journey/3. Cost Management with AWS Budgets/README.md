@@ -2,13 +2,13 @@
 
 ---
 
-## 📌 Overview
+### 📌 Overview
 
-**AWS Budgets** là công cụ thiết lập ngân sách tùy chỉnh để theo dõi chi phí và mức sử dụng tài nguyên AWS, gửi cảnh báo khi vượt ngưỡng.
-Hỗ trợ 2 loại chính: **Cost Budget** (theo dõi tiền $) và **Usage Budget** (theo dõi mức sử dụng như giờ chạy EC2).
-Là công cụ **giám sát và cảnh báo**, KHÔNG tự động dừng tài nguyên - cần kết hợp IAM/SCP để kiểm soát.
+- **AWS Budgets** là công cụ thiết lập ngân sách tùy chỉnh để theo dõi chi phí và mức sử dụng tài nguyên AWS, gửi cảnh báo khi vượt ngưỡng.
+- Hỗ trợ 2 loại chính: **Cost Budget** (theo dõi tiền $) và **Usage Budget** (theo dõi mức sử dụng như giờ chạy EC2).
+- Là công cụ **giám sát và cảnh báo**, KHÔNG tự động dừng tài nguyên - cần kết hợp IAM/SCP để kiểm soát.
 
-## 🎯 Mục tiêu sau bài học:**
+### 🎯 Mục tiêu sau bài học
 
 - Hiểu sự khác biệt giữa Cost Budget và Usage Budget
 - Tạo được Budget bằng Template và Customize

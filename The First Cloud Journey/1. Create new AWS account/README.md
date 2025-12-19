@@ -1,10 +1,10 @@
 # AWS Account - Khởi tạo & Quản lý Tài khoản AWS
 
-## 📌 Overview
+### 📌 Overview
 
-**Tạo tài khoản AWS miễn phí** từ A-Z với 9 bước chi tiết, tránh bị charge tiền không mong muốn
-**Quản lý tài khoản hiệu quả:** Xem Account ID, cập nhật thông tin, tạo Account Alias cho URL đăng nhập dễ nhớ
-**Áp dụng Best Practices 2025:** Bảo vệ Root User bằng MFA, thiết lập Billing Alert, và các nguyên tắc bảo mật quan trọng
+- **Tạo tài khoản AWS miễn phí** từ A-Z với 9 bước chi tiết, tránh bị charge tiền không mong muốn
+- **Quản lý tài khoản hiệu quả:** Xem Account ID, cập nhật thông tin, tạo Account Alias cho URL đăng nhập dễ nhớ
+- **Áp dụng Best Practices 2025:** Bảo vệ Root User bằng MFA, thiết lập Billing Alert, và các nguyên tắc bảo mật quan trọng
 
 ### 🎯 Mục tiêu đạt được
 
