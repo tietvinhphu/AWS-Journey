@@ -1,6 +1,6 @@
 # 💰 QUẢN LÝ CHI PHÍ VỚI AWS BUDGET
 <div align="center">
-  <img src="images/AWS%20Cost%20Management.png" alt="AWS Cost Management" width="100%">
+  <img src="../images/AWS%20Cost%20Management.png" alt="AWS Cost Management" width="100%">
 </div>
 ### 📌 Overview
 
