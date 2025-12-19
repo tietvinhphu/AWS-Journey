@@ -16,13 +16,14 @@ def get_session_overview(readme_path):
     with open(readme_path, 'r', encoding='utf-8') as f:
         content = f.read()
         
-    match = re.search(r'## 📌 Overview\s*\n(.*?)\n\s*###', content, re.DOTALL)
+    # Improved regex: Stops at the next line starting with # (any level header)
+    match = re.search(r'## 📌 Overview\s*\n(.*?)\n\s*#', content, re.DOTALL)
     if match:
         return match.group(1).strip()
     return None
 
 def format_as_html_list(markdown_text):
-    """Converts markdown bullet points to HTML list."""
+    """Converts markdown content to HTML list, handling both bullet points and plain lines."""
     if not markdown_text:
         return "<ul><li><em>Updating...</em></li></ul>"
         
@@ -31,11 +32,17 @@ def format_as_html_list(markdown_text):
     
     for line in lines:
         line = line.strip()
-        if line.startswith('- '):
+        if not line: continue 
+        
+        # Remove bullet point if exists
+        if line.startswith('- ') or line.startswith('* '):
             item_content = line[2:].strip()
-            # Basic bold formatting conversion **text** -> <strong>text</strong>
-            item_content = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', item_content)
-            html_items.append(f'<li>{item_content}</li>')
+        else:
+            item_content = line
+            
+        # Basic bold formatting conversion **text** -> <strong>text</strong>
+        item_content = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', item_content)
+        html_items.append(f'<li>{item_content}</li>')
             
     if html_items:
         return '<ul>' + ''.join(html_items) + '</ul>'

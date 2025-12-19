@@ -2,9 +2,9 @@
 
 ## 📌 Overview
 
-- **MFA (Multi-Factor Authentication)** là lớp bảo mật thiết yếu nhất, yêu cầu 2 yếu tố xác thực: mật khẩu (something you know) + mã từ thiết bị MFA (something you have).
-- **Virtual MFA Device** (Google Authenticator, Authy) tạo mã TOTP 6 số, là giải pháp miễn phí và dễ triển khai nhất cho tài khoản AWS.
-- **Root User** bắt buộc phải bật MFA ngay sau khi tạo tài khoản - đây là chốt chặn quan trọng nhất bảo vệ toàn bộ hạ tầng AWS.
+**MFA (Multi-Factor Authentication)** là lớp bảo mật thiết yếu nhất, yêu cầu 2 yếu tố xác thực: mật khẩu (something you know) + mã từ thiết bị MFA (something you have).
+**Virtual MFA Device** (Google Authenticator, Authy) tạo mã TOTP 6 số, là giải pháp miễn phí và dễ triển khai nhất cho tài khoản AWS.
+**Root User** bắt buộc phải bật MFA ngay sau khi tạo tài khoản - đây là chốt chặn quan trọng nhất bảo vệ toàn bộ hạ tầng AWS.
 
 ### 🎯 Mục tiêu sau bài học
 
