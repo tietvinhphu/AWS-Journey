@@ -2,6 +2,10 @@
 
 # 👨🏻‍💻 AWS Account - Khởi tạo & Quản lý Tài khoản AWS
 
+<div align="center">
+  <img src="../images/1.%20Create%20new%20AWS%20account.png" alt="AWS Account Banner" width="100%">
+</div>
+
 ### 📌 Overview
 
 - **Tạo tài khoản AWS miễn phí** từ A-Z với 9 bước chi tiết, tránh bị charge tiền không mong muốn
@@ -523,4 +527,8 @@ Dùng email distribution list như [`aws-root@company.com`](mailto:aws-root@comp
 
 ---
 
-*📅 Cập nhật: Tháng 12/2025*<p align='right'>(<a href='#readme-top'>back to top</a>)</p>
+*📅 Cập nhật: Tháng 12/2025*
+
+> ⏩ **Next Lesson:** [2. MFA for AWS Accounts](../2.%20MFA%20for%20AWS%20Accounts)
+
+<p align='right'>(<a href='#readme-top'>back to top</a>)</p>

@@ -9,10 +9,10 @@ TABLE_START_MARKER = '<!-- TABLE_START -->'
 TABLE_END_MARKER = '<!-- TABLE_END -->'
 
 TOP_ANCHOR = '<a name="readme-top"></a>'
-BACK_TO_TOP_LINK = "\n<p align='right'>(<a href='#readme-top'>back to top</a>)</p>"
+BACK_TO_TOP_LINK = "<p align='right'>(<a href='#readme-top'>back to top</a>)</p>"
 
-def ensure_back_to_top(readme_path):
-    """Ensures the README has the top anchor and back-to-top link."""
+def update_lab_footer(readme_path, next_folder_name=None):
+    """Updates the README footer with Next Lesson link (if available) and Back to Top."""
     if not os.path.exists(readme_path):
         return
 
@@ -21,22 +21,45 @@ def ensure_back_to_top(readme_path):
 
     modified = False
     
-    # Check/Add Top Anchor
+    # 1. Ensure Top Anchor
     if TOP_ANCHOR not in content:
-        # Avoid prepending if it looks like frontmatter or similar, but for now simple prepend
         content = TOP_ANCHOR + "\n\n" + content
         modified = True
+        
+    # 2. Logic to construct the new Footer
+    # We want the end of the file to look like:
+    # ---
+    # > ⏩ **Next Lesson:** [Folder Name](../Folder%20Name)
+    # 
+    # Back to top link
     
-    # Check/Add Bottom Link
-    # Simple check if the link exists roughly at the end
-    if "href='#readme-top'>back to top</a>" not in content:
-         content = content.rstrip() + "\n" + BACK_TO_TOP_LINK + "\n"
-         modified = True
+    # First, let's remove existing "Next Lesson" lines if they exist to avoid duplication/outdated info
+    # Regex to find: > ⏩ **Next Lesson:** .*
+    content = re.sub(r'> ⏩ \*\*Next Lesson:\*\* .*', '', content)
+    
+    # Remove existing Back to Top link (we will re-add it in correct order)
+    content = content.replace(BACK_TO_TOP_LINK, '').strip()
+    
+    # Also remove trailing newlines to ensure clean append
+    content = content.strip()
+    
+    # Append Next Lesson Link if exists
+    if next_folder_name:
+        encoded_next_folder = urllib.parse.quote(next_folder_name)
+        # Relative link: ../Next%20Folder
+        next_link = f"../{encoded_next_folder}"
+        next_nav_line = f"\n\n> ⏩ **Next Lesson:** [{next_folder_name}]({next_link})"
+        content += next_nav_line
+        
+    # Append Back to Top Link
+    content += f"\n\n{BACK_TO_TOP_LINK}\n"
+    modified = True # In this simpler logic, we almost always rewrite to ensure order
 
     if modified:
         with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(content)
-        print(f"Updated {os.path.basename(os.path.dirname(readme_path))}/README.md with Back to Top.")
+        # Only print if something likely changed substantially, but for now silent is okay to reduce noise
+        # print(f"Updated footer for {os.path.basename(os.path.dirname(readme_path))}")
 
 def get_session_overview(readme_path):
     """Extracts the content between '## 📌 Overview' and the next header."""
@@ -137,45 +160,47 @@ def update_readme():
         dirs = [d for d in os.listdir(lab_root_full_path) if os.path.isdir(os.path.join(lab_root_full_path, d))]
         # Sort by name (Lab-01, Lab-02...)
         dirs.sort()
+        
+        # Filter valid folders first (starts with number)
+        valid_dirs = [d for d in dirs if not d.startswith('.') and re.match(r'^\d+\.', d)]
 
-        for folder_name in dirs:
-            # Skip hidden folders
-            if folder_name.startswith('.'): continue
-            
-            # Skip folders that don't start with a number (e.g., 'images')
-            if not re.match(r'^\d+\.', folder_name): continue
+        for i, folder_name in enumerate(valid_dirs):
+             lab_readme_path = os.path.join(lab_root_full_path, folder_name, 'README.md')
+             
+             # --- Determine Next Lab Folder ---
+             next_folder = None
+             if i + 1 < len(valid_dirs):
+                 next_folder = valid_dirs[i + 1]
 
-            lab_readme_path = os.path.join(lab_root_full_path, folder_name, 'README.md')
-            
-            # --- New: Ensure Back to Top ---
-            ensure_back_to_top(lab_readme_path)
-            
-            # Prepare Columns
-            
-            # Col 1: Link
-            encoded_folder = urllib.parse.quote(folder_name)
-            encoded_root = urllib.parse.quote(LAB_ROOT_DIR)
-            link_path = f"./{encoded_root}/{encoded_folder}"
-            
-            col1 = f"**[{folder_name}]({link_path})**"
-            
-            # Col 2: Topics (Overview)
-            overview_text = get_session_overview(lab_readme_path)
-            col2 = format_as_html_list(overview_text)
-            
-            # Col 3 & 4: Status & Resources
-            # Default values
-            col3 = "![In Progress](https://img.shields.io/badge/Status-In_Progress-yellow?style=flat-square)"
-            col4 = "_Updating..._"
-            
-            # If exists in old data, use that
-            if folder_name in existing_data:
-                col3 = existing_data[folder_name]['status']
-                col4 = existing_data[folder_name]['resources']
-            
-            # Construct Row
-            row = f"| {col1} | {col2} | {col3} | {col4} |"
-            lab_rows.append(row)
+             # --- Update Footer (Next Link + Back to Top) ---
+             update_lab_footer(lab_readme_path, next_folder)
+             
+             # --- Prepare Table Columns ---
+             
+             # Col 1: Link
+             encoded_folder = urllib.parse.quote(folder_name)
+             encoded_root = urllib.parse.quote(LAB_ROOT_DIR)
+             link_path = f"./{encoded_root}/{encoded_folder}"
+             
+             col1 = f"**[{folder_name}]({link_path})**"
+             
+             # Col 2: Topics (Overview)
+             overview_text = get_session_overview(lab_readme_path)
+             col2 = format_as_html_list(overview_text)
+             
+             # Col 3 & 4: Status & Resources
+             # Default values
+             col3 = "![In Progress](https://img.shields.io/badge/Status-In_Progress-yellow?style=flat-square)"
+             col4 = "_Updating..._"
+             
+             # If exists in old data, use that
+             if folder_name in existing_data:
+                 col3 = existing_data[folder_name]['status']
+                 col4 = existing_data[folder_name]['resources']
+             
+             # Construct Row
+             row = f"| {col1} | {col2} | {col3} | {col4} |"
+             lab_rows.append(row)
 
     # 4. Reconstruct Table
     table_header = "| Bài Lab (Lab) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |\n| :--- | :--- | :--- | :--- |"

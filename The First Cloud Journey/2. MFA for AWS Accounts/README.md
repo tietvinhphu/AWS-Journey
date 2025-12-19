@@ -510,4 +510,7 @@ Sau khi hoàn thành lab:
 3. **TOTP** tạo mã 6 số mỗi 30 giây - yêu cầu đồng bộ thời gian chính xác
 4. **Shared Responsibility Model**: MFA thuộc trách nhiệm của khách hàng (Security IN the Cloud)
 5. **Least Privilege + MFA** = Nền tảng bảo mật vững chắc cho AWS
+
+> ⏩ **Next Lesson:** [3. Cost Management with AWS Budgets](../3.%20Cost%20Management%20with%20AWS%20Budgets)
+
 <p align='right'>(<a href='#readme-top'>back to top</a>)</p>
