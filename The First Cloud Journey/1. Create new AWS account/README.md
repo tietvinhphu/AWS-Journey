@@ -1,3 +1,5 @@
+<a name="readme-top"></a>
+
 # 👨🏻‍💻 AWS Account - Khởi tạo & Quản lý Tài khoản AWS
 
 ### 📌 Overview
@@ -521,4 +523,4 @@ Dùng email distribution list như [`aws-root@company.com`](mailto:aws-root@comp
 
 ---
 
-*📅 Cập nhật: Tháng 12/2025*
+*📅 Cập nhật: Tháng 12/2025*<p align='right'>(<a href='#readme-top'>back to top</a>)</p>

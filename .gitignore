@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# IDE & System
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# AWS & Sensitive Data
+*.pem
+*.ppk
+*.csv
+.env
+aws-credentials.txt
+backup/

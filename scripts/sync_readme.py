@@ -8,6 +8,36 @@ README_FILENAME = 'README.md'
 TABLE_START_MARKER = '<!-- TABLE_START -->'
 TABLE_END_MARKER = '<!-- TABLE_END -->'
 
+TOP_ANCHOR = '<a name="readme-top"></a>'
+BACK_TO_TOP_LINK = "\n<p align='right'>(<a href='#readme-top'>back to top</a>)</p>"
+
+def ensure_back_to_top(readme_path):
+    """Ensures the README has the top anchor and back-to-top link."""
+    if not os.path.exists(readme_path):
+        return
+
+    with open(readme_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    modified = False
+    
+    # Check/Add Top Anchor
+    if TOP_ANCHOR not in content:
+        # Avoid prepending if it looks like frontmatter or similar, but for now simple prepend
+        content = TOP_ANCHOR + "\n\n" + content
+        modified = True
+    
+    # Check/Add Bottom Link
+    # Simple check if the link exists roughly at the end
+    if "href='#readme-top'>back to top</a>" not in content:
+         content = content.rstrip() + "\n" + BACK_TO_TOP_LINK + "\n"
+         modified = True
+
+    if modified:
+        with open(readme_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+        print(f"Updated {os.path.basename(os.path.dirname(readme_path))}/README.md with Back to Top.")
+
 def get_session_overview(readme_path):
     """Extracts the content between '## 📌 Overview' and the next header."""
     if not os.path.exists(readme_path):
@@ -17,7 +47,11 @@ def get_session_overview(readme_path):
         content = f.read()
         
     # Improved regex: Stops at the next line starting with # (any level header)
-    match = re.search(r'## 📌 Overview\s*\n(.*?)\n\s*#', content, re.DOTALL)
+    match = re.search(r'### 📌 Overview\s*\n(.*?)\n\s*#', content, re.DOTALL)
+    # Fallback for H2 if H3 not found (legacy support)
+    if not match:
+        match = re.search(r'## 📌 Overview\s*\n(.*?)\n\s*#', content, re.DOTALL)
+        
     if match:
         return match.group(1).strip()
     return None
@@ -109,6 +143,9 @@ def update_readme():
             if folder_name.startswith('.'): continue
             
             lab_readme_path = os.path.join(lab_root_full_path, folder_name, 'README.md')
+            
+            # --- New: Ensure Back to Top ---
+            ensure_back_to_top(lab_readme_path)
             
             # Prepare Columns
             
