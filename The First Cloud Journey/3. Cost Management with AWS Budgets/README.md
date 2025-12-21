@@ -36,22 +36,31 @@
 
 ```mermaid
 flowchart TD
-    A[👤 User tạo Budget] --> B{📋 Chọn loại Budget}
-    B -->|Template| C[⚡ Monthly Cost Budget]
-    B -->|Customize| D{🎯 Loại Custom}
-    D -->|Cost Budget| E[💵 Thiết lập số tiền $]
-    D -->|Usage Budget| F[⏱️ Chọn Resource - EC2 Hours]
-    C --> G[🔔 Cấu hình Alert & Email]
+    %% Define Styles
+    classDef user fill:#fff,stroke:#232F3E,stroke-width:2px,color:#232F3E
+    classDef decision fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef action fill:#fff,stroke:#FF9900,stroke-width:2px,color:#232F3E,stroke-dasharray: 5 5
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:0px,color:#fff
+    classDef alert fill:#D13212,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef safe fill:#1E8900,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef process fill:#f2f2f2,stroke:#232F3E,stroke-width:1px,color:#232F3E
+
+    %% Flow
+    A[👤 User tạo Budget]:::user --> B{📋 Chọn loại Budget}:::decision
+    B -->|Template| C[⚡ Monthly Cost Budget]:::process
+    B -->|Customize| D{🎯 Loại Custom}:::decision
+    D -->|Cost Budget| E[💵 Thiết lập số tiền $]:::process
+    D -->|Usage Budget| F[⏱️ Chọn Resource - EC2 Hours]:::process
+    
+    C --> G[🔔 Cấu hình Alert & Email]:::aws
     E --> G
     F --> G
-    G --> H[✅ Review & Create]
-    H --> I[📊 AWS Monitoring]
-    I -->|Vượt ngưỡng| J[📧 Gửi Email Cảnh báo]
-    I -->|Trong hạn mức| K[🔄 Tiếp tục theo dõi]
-
-    style A fill:#e1f5fe
-    style J fill:#ffcdd2
-    style K fill:#c8e6c9
+    
+    G --> H[✅ Review & Create]:::process
+    H --> I[📊 AWS Monitoring]:::aws
+    
+    I -->|Vượt ngưỡng| J[📧 Gửi Email Cảnh báo]:::alert
+    I -->|Trong hạn mức| K[🔄 Tiếp tục theo dõi]:::safe
 
 ```
 
@@ -210,15 +219,11 @@ flowchart LR
 - [ ]  Tìm kiếm dịch vụ **"Billing and Cost Management"** trong thanh search
 - [ ]  Click vào **Budgets** từ menu bên trái
 
-📸 **[SCREENSHOT]:** Giao diện Billing Dashboard với menu Budgets được highlight
-
 ### Phase 2: Tạo Budget từ Template
 
 - [ ]  Nhấn nút **"Create a budget"** (màu cam)
 - [ ]  Trong phần **Budget setup**, chọn **"Use a template (simplified)"**
 - [ ]  Trong phần **Templates**, chọn **"Monthly cost budget"**
-
-📸 **[SCREENSHOT]:** Màn hình chọn Template với "Monthly cost budget" được chọn
 
 ### Phase 3: Cấu hình chi tiết
 
@@ -226,15 +231,11 @@ flowchart LR
 - [ ]  **Budgeted amount ($):** Nhập `100.00`
 - [ ]  **Email recipients:** Nhập email nhận cảnh báo (ví dụ: `your-email@gmail.com`)
 
-📸 **[SCREENSHOT]:** Form điền thông tin Budget với các trường đã được điền
-
 ### Phase 4: Hoàn tất và Kiểm tra
 
 - [ ]  Nhấn **"Create budget"**
 - [ ]  Xác nhận budget mới xuất hiện trong danh sách
 - [ ]  Kiểm tra trạng thái: **"Within budget"** (màu xanh)
-
-📸 **[SCREENSHOT]:** Danh sách Budgets với budget vừa tạo hiển thị trạng thái "Within budget"
 
 > ✅ Kết quả mong đợi: Budget được tạo thành công, hiển thị trong danh sách với ngưỡng mặc định 80% và 100%
 > 
@@ -266,8 +267,6 @@ flowchart TD
 - [ ]  Chọn **"Cost budget - Recommended"**
 - [ ]  Nhấn **"Next"**
 
-📸 **[SCREENSHOT]:** Màn hình chọn "Customize (advanced)" và "Cost budget"
-
 ### Phase 2: Thiết lập Ngân sách
 
 - [ ]  **Period:** Chọn `Monthly`
@@ -275,8 +274,6 @@ flowchart TD
 - [ ]  **Budgeting method:** Chọn `Fixed` (cố định)
 - [ ]  **Budgeted amount:** Nhập `100.00`
 - [ ]  **Budget name:** Nhập `Custom-Cost-Budget-100USD`
-
-📸 **[SCREENSHOT]:** Form "Set budget amount" với các giá trị đã điền
 
 ### Phase 3: Chọn Phạm vi theo dõi
 
@@ -309,8 +306,6 @@ flowchart TD
 - [ ]  **Trigger:** Chọn `Actual`
 - [ ]  **Email recipients:** Nhập email
 
-� **[SCREENSHOT]:** Danh sách 3 alert thresholds đã cấu hình (50%, 80%, 100%)
-
 - [ ]  Nhấn **"Next"**
 
 ### Phase 5: Review và Tạo
@@ -318,8 +313,6 @@ flowchart TD
 - [ ]  Xem lại tất cả thông tin cấu hình
 - [ ]  (Optional) Click **"Download template in JSON"** để lưu template
 - [ ]  Nhấn **"Create budget"**
-
-📸 **[SCREENSHOT]:** Màn hình Review với đầy đủ thông tin budget
 
 > ✅ Kết quả mong đợi: Budget với 3 ngưỡng cảnh báo (50%, 80%, 100%) được tạo thành công
 > 
