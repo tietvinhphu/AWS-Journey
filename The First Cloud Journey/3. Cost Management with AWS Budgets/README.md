@@ -124,23 +124,29 @@ Các cấu hình AWS định nghĩa sẵn cho trường hợp phổ biến:
 
 ```mermaid
 flowchart LR
+    %% Define Styles
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:0px,color:#fff
+    classDef alert fill:#D13212,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef control fill:#1E8900,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef process fill:#f2f2f2,stroke:#232F3E,stroke-width:1px,color:#232F3E
+
     subgraph "AWS Cost Management"
-        A[AWS Budgets]
-        B[Cost Explorer]
-        C[Cost & Usage Reports]
-        D[Billing Dashboard]
+        A[AWS Budgets]:::aws
+        B[Cost Explorer]:::process
+        C[Cost & Usage Reports]:::process
+        D[Billing Dashboard]:::process
     end
 
     subgraph "Alerting"
-        E[SNS Topics]
-        F[Email Notifications]
-        G[AWS Chatbot]
+        E[SNS Topics]:::aws
+        F[Email Notifications]:::alert
+        G[AWS Chatbot]:::process
     end
 
     subgraph "Control"
-        H[IAM Policies]
-        I[Service Control Policies]
-        J[Service Quotas]
+        H[IAM Policies]:::control
+        I[Service Control Policies]:::control
+        J[Service Quotas]:::control
     end
 
     A -->|Trigger| E
@@ -148,11 +154,6 @@ flowchart LR
     E --> G
     A -.->|Chỉ giám sát| H
     H -->|Chặn tạo resource| I
-
-    style A fill:#fff3e0
-    style H fill:#e8f5e9
-    style I fill:#e8f5e9
-
 ```
 
 ---
@@ -188,15 +189,13 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    L1[🏃 Lab 1<br/>Template Budget] --> L2[⚙️ Lab 2<br/>Custom Cost Budget]
-    L2 --> L3[📊 Lab 3<br/>Usage Budget]
-    L3 --> L4[🧹 Lab 4<br/>Cleanup]
+    %% Define Styles
+    classDef lab fill:#f2f2f2,stroke:#232F3E,stroke-width:1px,color:#232F3E
+    classDef current fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
 
-    style L1 fill:#e3f2fd
-    style L2 fill:#fff3e0
-    style L3 fill:#f3e5f5
-    style L4 fill:#ffebee
-
+    L1[🏃 Lab 1<br/>Template Budget]:::lab --> L2[⚙️ Lab 2<br/>Custom Cost Budget]:::lab
+    L2 --> L3[📊 Lab 3<br/>Usage Budget]:::lab
+    L3 --> L4[🧹 Lab 4<br/>Cleanup]:::lab
 ```
 
 ---
@@ -209,8 +208,12 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[Console] --> B[Billing] --> C[Budgets] --> D[Create] --> E[Template] --> F[Done!]
+    %% Define Styles
+    classDef process fill:#f2f2f2,stroke:#232F3E,stroke-width:1px,color:#232F3E
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:0px,color:#fff
+    classDef done fill:#1E8900,stroke:#232F3E,stroke-width:2px,color:#fff
 
+    A[Console]:::process --> B[Billing]:::process --> C[Budgets]:::aws --> D[Create]:::process --> E[Template]:::process --> F[Done!]:::done
 ```
 
 ### Phase 1: Truy cập AWS Budgets
@@ -250,14 +253,16 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    A[Create Budget] --> B[Customize - Advanced]
-    B --> C[Cost Budget]
-    C --> D[Set Amount<br/>Monthly/$100]
-    D --> E[Configure Alerts<br/>50%, 80%, 100%]
-    E --> F[Review & Create]
+    %% Define Styles
+    classDef process fill:#f2f2f2,stroke:#232F3E,stroke-width:1px,color:#232F3E
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:0px,color:#fff
+    classDef alert fill:#D13212,stroke:#232F3E,stroke-width:2px,color:#fff
 
-    style E fill:#fff3e0
-
+    A[Create Budget]:::process --> B[Customize - Advanced]:::process
+    B --> C[Cost Budget]:::aws
+    C --> D[Set Amount<br/>Monthly/$100]:::process
+    D --> E[Configure Alerts<br/>50%, 80%, 100%]:::alert
+    E --> F[Review & Create]:::process
 ```
 
 ### Phase 1: Khởi tạo Custom Budget
@@ -327,16 +332,18 @@ flowchart TD
 
 ```mermaid
 flowchart LR
+    %% Define Styles
+    classDef resource fill:#f2f2f2,stroke:#232F3E,stroke-width:1px,color:#232F3E
+    classDef action fill:#fff,stroke:#FF9900,stroke-width:2px,color:#232F3E,stroke-dasharray: 5 5
+    classDef alert fill:#D13212,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef safe fill:#1E8900,stroke:#232F3E,stroke-width:2px,color:#fff
+
     subgraph "Usage Budget Flow"
-        A[EC2 Instance<br/>Running] --> B[Usage Tracking<br/>Hours]
-        B --> C{Check Threshold}
-        C -->|>80%| D[⚠️ Alert Email]
-        C -->|<80%| E[✅ Continue]
+        A[EC2 Instance<br/>Running]:::resource --> B[Usage Tracking<br/>Hours]:::action
+        B --> C{Check Threshold}:::action
+        C -->|>80%| D[⚠️ Alert Email]:::alert
+        C -->|<80%| E[✅ Continue]:::safe
     end
-
-    style D fill:#ffcdd2
-    style E fill:#c8e6c9
-
 ```
 
 ### Phase 1: Khởi tạo Usage Budget
@@ -346,15 +353,11 @@ flowchart LR
 - [ ]  Chọn **"Usage budget"**
 - [ ]  Nhấn **"Next"**
 
-📸 **[SCREENSHOT]:** Màn hình chọn "Usage budget"
-
 ### Phase 2: Cấu hình Usage Type
 
 - [ ]  **Budget name:** Nhập `EC2-Running-Hours-Budget`
 - [ ]  **Usage type:** Click dropdown, chọn **"Usage type groups"**
 - [ ]  Tìm và chọn **"EC2: Running Hours (Hrs)"**
-
-📸 **[SCREENSHOT]:** Dropdown Usage type với "EC2: Running Hours" được chọn
 
 ### Phase 3: Thiết lập Giới hạn
 
@@ -362,8 +365,6 @@ flowchart LR
 - [ ]  **Budget renewal type:** Chọn `Recurring budget`
 - [ ]  **Budgeted amount (Hrs):** Nhập `100` (100 giờ/tháng)
 - [ ]  Nhấn **"Next"**
-
-📸 **[SCREENSHOT]:** Form thiết lập với 100 Hrs budgeted amount
 
 ### Phase 4: Cấu hình Cảnh báo
 
@@ -377,8 +378,6 @@ flowchart LR
 
 - [ ]  Review thông tin
 - [ ]  Nhấn **"Create budget"**
-
-📸 **[SCREENSHOT]:** Usage Budget trong danh sách với unit "Hrs"
 
 > ✅ Kết quả mong đợi: Usage Budget theo dõi EC2 running hours, cảnh báo khi vượt 80 giờ
 > 
@@ -399,10 +398,12 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[Budgets List] --> B[Select Budget] --> C[Delete] --> D[Confirm] --> E[✅ Cleaned!]
-
-    style E fill:#c8e6c9
-
+    %% Define Styles
+    classDef process fill:#f2f2f2,stroke:#232F3E,stroke-width:1px,color:#232F3E
+    classDef delete fill:#D13212,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef clean fill:#1E8900,stroke:#232F3E,stroke-width:2px,color:#fff
+    
+    A[Budgets List]:::process --> B[Select Budget]:::process --> C[Delete]:::delete --> D[Confirm]:::process --> E[✅ Cleaned!]:::clean
 ```
 
 ### Phase 1: Xóa các Budget đã tạo
@@ -412,8 +413,6 @@ flowchart LR
 - [ ]  Nhấn nút **"Delete"** (hoặc Actions > Delete)
 - [ ]  Trong hộp thoại xác nhận, nhấn **"Confirm"** hoặc **"Delete"**
 
-📸 **[SCREENSHOT]:** Hộp thoại xác nhận xóa budget
-
 - [ ]  Lặp lại cho các budget còn lại:
     - [ ]  `Custom-Cost-Budget-100USD`
     - [ ]  `EC2-Running-Hours-Budget`
@@ -421,8 +420,6 @@ flowchart LR
 ### Phase 2: Xác nhận đã xóa sạch
 
 - [ ]  Kiểm tra danh sách Budgets đã trống (hoặc chỉ còn budget production)
-
-📸 **[SCREENSHOT]:** Danh sách Budgets trống sau khi cleanup
 
 > ✅ Kết quả mong đợi: Tất cả budget thực hành đã được xóa, không còn nhận email cảnh báo
 > 
