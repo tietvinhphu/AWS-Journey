@@ -25,7 +25,7 @@
 
 | Loại tài nguyên (Type) | Nội dung (Content) |
 | :--- | :--- |
-| 📺 **Video hướng dẫn** | [1.Tạo Tài Khoản AWS Miễn Phí - Hướng Dẫn Chi Tiết Cho Người Mới](https://www.youtube.com/watch?v=fDhiEsKYiHY) |
+| 📺 **Video YouTube** | [1.Tạo Tài Khoản AWS Miễn Phí - Hướng Dẫn Chi Tiết Cho Người Mới](https://www.youtube.com/watch?v=fDhiEsKYiHY) |
 | 🆓 **AWS Free Tier** | [Trang chủ AWS Free Tier](https://aws.amazon.com/free) |
 | 🔗 **AWS Console** | [Link đăng nhập AWS Console](https://console.aws.amazon.com) |
 

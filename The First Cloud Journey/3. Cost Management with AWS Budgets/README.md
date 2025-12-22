@@ -24,7 +24,7 @@
 
 | Loại | Link |
 | --- | --- |
-| 📺 **Video YouTube** | [Điền Link Video] |
+| 📺 **Video YouTube** | [3. Cost Management with AWS Budgets](https://www.youtube.com/watch?v=_3o1QjIhm10) |
 | 📖 **AWS Docs** | [AWS Budgets Documentation](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) |
 | 🧮 **Calculator** | [AWS Pricing Calculator](https://calculator.aws/) |
 
