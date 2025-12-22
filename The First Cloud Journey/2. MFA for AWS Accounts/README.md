@@ -26,7 +26,7 @@ Sau khi hoàn thành, bạn sẽ có thể:
 
 | Loại | Link | Mô tả |
 | :--- | :--- | :--- |
-| 📺 **Video YouTube** | [2. MFA for AWS Accounts](https://www.youtube.com/watch?v=osjvuki5fu8&t=15s) |
+| 📺 **Video YouTube** | [2. Hướng Dẫn Bật MFA Cho Tài Khoản AWS](https://www.youtube.com/watch?v=osjvuki5fu8&t=15s) |
 | 📖 **AWS Docs** | [IAM MFA Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html) | Tài liệu chính thức AWS |
 | 🔧 **Google Authenticator** | [iOS](https://apps.apple.com/app/google-authenticator/id388497605) / [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2) | App Virtual MFA phổ biến |
 | 🔧 **Authy** | [Download](https://authy.com/download/) | App Virtual MFA hỗ trợ backup |
