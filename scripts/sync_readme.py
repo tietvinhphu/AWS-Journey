@@ -203,7 +203,7 @@ def update_readme():
              lab_rows.append(row)
 
     # 4. Reconstruct Table
-    table_header = "| Bài Lab (Lab) | Chủ đề (Topics) | Trạng thái (Status) | Tài liệu (Resources) |\n| :--- | :--- | :--- | :--- |"
+    table_header = "| <div align=\"center\">Bài Lab (Lab)</div> | <div align=\"center\">Chủ đề (Topics)</div> | <div align=\"center\">Trạng thái (Status)</div> | <div align=\"center\">Tài liệu (Resources)</div> |\n| :---: | :--- | :---: | :---: |"
     table_content = "\n".join(lab_rows)
     new_table_section = f"{table_header}\n{table_content}"
     
