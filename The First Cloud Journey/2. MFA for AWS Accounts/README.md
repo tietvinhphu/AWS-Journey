@@ -514,4 +514,17 @@ Sau khi hoàn thành lab:
 
 > ⏩ **Next Lesson:** [3. Cost Management with AWS Budgets](../3.%20Cost%20Management%20with%20AWS%20Budgets)
 
+<!-- FOOTER_START -->
+<br>
+<div align="center">
+  <b>AWS Cloud Journey</b>
+  <br>
+  <i>"Hành trình từ Zero đến Hero với AWS Cloud & DevOps"</i>
+  <br><br>
+  <a href="https://www.facebook.com/XueYongFu"><img src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="Facebook"></a>
+  <a href="https://www.linkedin.com/in/tiet-vinh-phu-609173155/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://github.com/tietvinhphu/AWS-Journey"><img src="https://img.shields.io/badge/Github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+</div>
+<!-- FOOTER_END -->
+
 <p align='right'>(<a href='#readme-top'>back to top</a>)</p>

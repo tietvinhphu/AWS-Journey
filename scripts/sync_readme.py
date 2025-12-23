@@ -9,6 +9,10 @@ TABLE_START_MARKER = '<!-- TABLE_START -->'
 TABLE_END_MARKER = '<!-- TABLE_END -->'
 
 
+TOP_ANCHOR = '<a name="readme-top"></a>'
+BACK_TO_TOP_LINK = "<p align='right'>(<a href='#readme-top'>back to top</a>)</p>"
+
+
 FOOTER_START_MARKER = '<!-- FOOTER_START -->'
 FOOTER_END_MARKER = '<!-- FOOTER_END -->'
 
