@@ -11,7 +11,7 @@
 ## Luồng chính:
 Tạo Admin Group & User ➔ Tạo Role quyền lực (AdminRole) ➔ Tạo User hạn chế (OperatorUser) ➔ Cấu hình cho OperatorUser “mượn quyền” AdminRole
 
-## Key Takeaway: Luôn tuân thủ nguyên tắc Least Privilege và hạn chế dùng credential dài hạn.
+**Key Takeaway**: Luôn tuân thủ nguyên tắc Least Privilege và hạn chế dùng credential dài hạn.
 
 ---
 
