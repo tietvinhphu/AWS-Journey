@@ -8,10 +8,10 @@
 - Hiểu và thực hành kỹ thuật **Switch Role** để bảo mật tối đa
 - Nắm vững nguyên tắc **Least Privilege** (Đặc quyền tối thiểu)
 
-**Luồng chính:**
+## Luồng chính:
 Tạo Admin Group & User ➔ Tạo Role quyền lực (AdminRole) ➔ Tạo User hạn chế (OperatorUser) ➔ Cấu hình cho OperatorUser “mượn quyền” AdminRole
 
-**Key Takeaway:** Luôn tuân thủ nguyên tắc Least Privilege và hạn chế dùng credential dài hạn.
+## Key Takeaway: Luôn tuân thủ nguyên tắc Least Privilege và hạn chế dùng credential dài hạn.
 
 ---
 
