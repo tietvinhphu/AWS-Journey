@@ -8,11 +8,27 @@ README_FILENAME = 'README.md'
 TABLE_START_MARKER = '<!-- TABLE_START -->'
 TABLE_END_MARKER = '<!-- TABLE_END -->'
 
-TOP_ANCHOR = '<a name="readme-top"></a>'
-BACK_TO_TOP_LINK = "<p align='right'>(<a href='#readme-top'>back to top</a>)</p>"
+
+FOOTER_START_MARKER = '<!-- FOOTER_START -->'
+FOOTER_END_MARKER = '<!-- FOOTER_END -->'
+
+FOOTER_TEMPLATE = f"""
+{FOOTER_START_MARKER}
+<br>
+<div align="center">
+  <b>AWS Cloud Journey</b>
+  <br>
+  <i>"Hành trình từ Zero đến Hero với AWS Cloud & DevOps"</i>
+  <br><br>
+  <a href="https://www.facebook.com/XueYongFu"><img src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="Facebook"></a>
+  <a href="https://www.linkedin.com/in/tiet-vinh-phu-609173155/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://github.com/tietvinhphu/AWS-Journey"><img src="https://img.shields.io/badge/Github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+</div>
+{FOOTER_END_MARKER}
+"""
 
 def update_lab_footer(readme_path, next_folder_name=None):
-    """Updates the README footer with Next Lesson link (if available) and Back to Top."""
+    """Updates the README footer with Next Lesson link, Global Footer, and Back to Top."""
     if not os.path.exists(readme_path):
         return
 
@@ -27,21 +43,23 @@ def update_lab_footer(readme_path, next_folder_name=None):
         modified = True
         
     # 2. Logic to construct the new Footer
-    # We want the end of the file to look like:
-    # ---
-    # > ⏩ **Next Lesson:** [Folder Name](../Folder%20Name)
-    # 
-    # Back to top link
+    # Order: [Content] -> [Next Lesson] -> [Global Footer] -> [Back to Top]
     
-    # First, let's remove existing "Next Lesson" lines if they exist to avoid duplication/outdated info
-    # Regex to find: > ⏩ **Next Lesson:** .*
+    # 2a. Strip OLD auto-generated content
+    # Remove old Next Lesson lines
     content = re.sub(r'> ⏩ \*\*Next Lesson:\*\* .*', '', content)
     
-    # Remove existing Back to Top link (we will re-add it in correct order)
+    # Remove old Global Footer (if exists between markers)
+    pattern_footer = re.compile(f"{re.escape(FOOTER_START_MARKER)}.*?{re.escape(FOOTER_END_MARKER)}", re.DOTALL)
+    content = pattern_footer.sub('', content)
+    
+    # Remove existing Back to Top link
     content = content.replace(BACK_TO_TOP_LINK, '').strip()
     
     # Also remove trailing newlines to ensure clean append
     content = content.strip()
+    
+    # 3. Append New Content
     
     # Append Next Lesson Link if exists
     if next_folder_name:
@@ -51,15 +69,16 @@ def update_lab_footer(readme_path, next_folder_name=None):
         next_nav_line = f"\n\n> ⏩ **Next Lesson:** [{next_folder_name}]({next_link})"
         content += next_nav_line
         
+    # Append Global Footer
+    content += "\n" + FOOTER_TEMPLATE
+        
     # Append Back to Top Link
-    content += f"\n\n{BACK_TO_TOP_LINK}\n"
-    modified = True # In this simpler logic, we almost always rewrite to ensure order
+    content += f"\n{BACK_TO_TOP_LINK}\n"
+    modified = True 
 
     if modified:
         with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(content)
-        # Only print if something likely changed substantially, but for now silent is okay to reduce noise
-        # print(f"Updated footer for {os.path.basename(os.path.dirname(readme_path))}")
 
 def get_session_overview(readme_path):
     """Extracts the content between '## 📌 Overview' and the next header."""
