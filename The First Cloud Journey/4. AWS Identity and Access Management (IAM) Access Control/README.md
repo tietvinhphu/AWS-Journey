@@ -1,16 +1,8 @@
 <a name="readme-top"></a>
 
-# AWS Identity and Access Management (IAM) Access Control
-
-Cập Nhật Lần Cuối: December 23, 2025 10:34 AM
-
 # 🔑 Quản trị quyền truy cập IAM từ A-Z
 
----
-
-## 📌 Overview
-
-**Mục tiêu bài học:**
+### 📌 Overview
 
 - Thiết lập môi trường IAM chuẩn, **không dùng Root User** cho công việc hàng ngày
 - Hiểu và thực hành kỹ thuật **Switch Role** để bảo mật tối đa
