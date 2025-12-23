@@ -1,6 +1,9 @@
 <a name="readme-top"></a>
 
 # 🔑 Quản trị quyền truy cập IAM từ A-Z
+<div align="center">
+  <img src="../images/4. AWS Identity and Access Management (IAM) Access Control/image 7.png" alt="AWS Cost Management" width="100%">
+</div>
 
 ### 📌 Overview
 
