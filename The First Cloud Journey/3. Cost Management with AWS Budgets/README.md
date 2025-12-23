@@ -530,4 +530,6 @@ flowchart LR
 
 **👤 Tác giả:** PhuTV - AWS Learning Journey
 
+> ⏩ **Next Lesson:** [4. AWS Identity and Access Management (IAM) Access Control](../4.%20AWS%20Identity%20and%20Access%20Management%20%28IAM%29%20Access%20Control)
+
 <p align='right'>(<a href='#readme-top'>back to top</a>)</p>
