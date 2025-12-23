@@ -7,6 +7,11 @@ echo       ☁️  AWS JOURNEY - AUTOMATION TOOL ☁️
 echo ========================================================
 echo.
 
+:: 0. Cập nhật code mới nhất từ GitHub
+echo [Process 0/4] Dang kiem tra cap nhat tu Github (Git Pull)...
+git pull origin main
+echo.
+
 :: 1. Chạy script đồng bộ
 echo [Process 1/4] Dang dong bo README... (Running sync script)
 python "scripts/sync_readme.py"
