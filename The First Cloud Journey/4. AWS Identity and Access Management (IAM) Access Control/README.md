@@ -375,7 +375,7 @@ flowchart LR
 - [ ]  Nhập thông tin:
     - **Account:** 12 số Account ID của bạn
     - **Role:** `AdminRole`
-    - **Display Name:** `Admin` (để dễ nhận biết)
+    - **Display Name:** `AdminRole` (để dễ nhận biết)
     - **Color:** Chọn màu **Đỏ** (Cảnh báo quyền cao)
 - [ ]  Bấm **Switch Role**
 
