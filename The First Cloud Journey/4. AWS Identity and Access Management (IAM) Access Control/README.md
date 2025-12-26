@@ -84,7 +84,7 @@ flowchart TB
 
 | Loại | Link |
 | --- | --- |
-| 📺 Video | [4. Hướng Dẫn AWS IAM Cho Người Mới Switch Role Tutorial](about:blank#) |
+| 📺 Video | [4. Hướng Dẫn AWS IAM Cho Người Mới Switch Role Tutorial](https://youtu.be/qqbcZQfB0bE?si=7g7eWHXaF5k3bxLm) |
 | 📖 AWS Docs | [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/) |
 | 📖 Best Practices | [Security Best Practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) |
 | 🛠️ AWS Console | [IAM Dashboard](https://console.aws.amazon.com/iam/) |
